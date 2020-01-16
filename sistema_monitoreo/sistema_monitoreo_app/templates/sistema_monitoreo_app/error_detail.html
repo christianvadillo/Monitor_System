@@ -1,0 +1,48 @@
+{% extends "sistema_monitoreo_app/basic_dash.html" %}
+{% block body_block %}
+
+  <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
+	<div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-3">
+                    <h7><a href="{% url 'sistema_monitoreo_app:error-create' %}"> Agregar nuevo error</a></h7>
+                    <ol>
+                        {% for error in errores_list %}
+                        <h7><li><a href="{% url 'sistema_monitoreo_app:error-detail' error.id %}"><div class="text-break">{{error.nombre}}</div></a></li></h7>
+                        {% endfor %}
+                    </ol>
+                </div>
+                <div class="col-md-5">
+                    <h3>Detalles del error</h3>
+                    <h6><span class="badge badge-info">Nombre:</span> {{error_detail.nombre}}</h6>
+                    <h6><span class="badge badge-info">Id:</span> {{error_detail.id}}</h6>
+                    <h6><span class="badge badge-info">IRI:</span><div class="text-break">{{error_detail.iri}}</div></h6>
+                    <h6><span class="badge badge-info">Nivel de peligro:</span> {{error_detail.peligro}}</h6>
+                    <h6><span class="badge badge-info">Variable afectada:</span>
+                        {% for v in error_detail.variable.all  %}
+                        <ul>
+                            <li>{{ v }}</li>
+                        </ul>
+                        {%empty%}
+                        <li>No definido</li>
+                        {%endfor%}</h6>
+                    <h6><span class="badge badge-info">Descripción del error:</span> {{error_detail.descripcion}}</h6>
+                    <h6><span class="badge badge-info">Es error de:</span> {{error_detail.es_error_de}}</h6>
+
+                    <h7><a href="{% url 'sistema_monitoreo_app:error-update' error_detail.id %}"> Editar error</a></h7>
+                </div>
+                <div class="col-md-4">
+                    <h7><a href="{% url 'sistema_monitoreo_app:recomendacion-create' %}"> Agregar nueva recomendación</a></h7>
+                    {% for r in error_detail.tieneRecomendacion.all %}
+                    <h6><span class="badge badge-success">Recomendación:</span>{{ r.nombre }}</h6>
+                    <h6><span class="badge badge-success">Descripción:</span>{{ r.descripcion }}</h6>
+                    <h6><span class="badge badge-success">Creado:</span>{{ r.created_at}}</h6>
+                    <h6><span class="badge badge-success">Actualizado:</span>{{ r.updated_at}}</h6>
+                    <h7><a href="{% url 'sistema_monitoreo_app:recomendacion-update' r.id %}"> Editar recomendación</a></h7>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

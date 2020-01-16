@@ -1,0 +1,266 @@
+{% extends "sistema_monitoreo_app/basic_dash.html" %}
+{% load static %}
+{% block body_block %}
+
+<div class="container-fluid">
+    <div class="col-md-4">
+        <div id="slider-div">
+            <label>Date: <span id="dateLabel1">{{ min_date }}</span> -
+                <span id="dateLabel2">{{ max_date}}</span></label>
+            <div id="date-slider"></div>
+        </div>
+    </div>
+
+	<div class="row">
+				<div class="col-md-8">
+					<h3>DA</h3>
+					<div class="row">
+						<div class="col-md-4">
+                            <div id="da-chart-area1"></div>
+                            <div id="da-chart-area4"></div>
+                        </div>
+						<div class="col-md-4">
+                            <div id="da-chart-area2"></div>
+                            <div id="da-chart-area5"></div>
+                        </div>
+						<div class="col-md-4">
+                              <div id="da-chart-area3"></div>
+                              <div id="da-chart-area6"></div>
+                        </div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="carousel slide" id="carousel-da" data-interval="11000">
+						<ol class="carousel-indicators">
+							<li data-slide-to="0" data-target="#carousel-da" class="active"></li>
+							<li data-slide-to="1" data-target="#carousel-da"></li>
+							<li data-slide-to="2" data-target="#carousel-da"></li>
+						</ol>
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<img class="d-block w-100" alt="Carousel Bootstrap First" src={% static 'backgrounds/carucel_1600_500_f0f0f0.jpg' %}>
+								<div class="carousel-caption">
+									<h5 style="color:black;">DA - Última medición</h5>
+									<div id="da-estado" class="carousel-text"> </div>
+								</div>
+							</div>
+							<div class="carousel-item">
+								<img class="d-block w-100" alt="Carousel Bootstrap Second" src={% static 'backgrounds/carucel_1600_500_f0f0f0.jpg' %}>
+								<div class="carousel-caption">
+									<h5 style="color:black;">DA - Errores</h5>
+									<div id="da-errores" class="carousel-text"> </div>
+								</div>
+							</div>
+							<div class="carousel-item">
+								<img class="d-block w-100" alt="Carousel Bootstrap Third" src={% static 'backgrounds/carucel_1600_500_f0f0f0.jpg' %}>
+								<div class="carousel-caption">
+									<h5 style="color:black;">Recomendaciones</h5>
+                                    <div id="da-recomendaciones" class="carousel-text"> </div>
+								</div>
+							</div>
+						</div> <a class="carousel-control-prev" href="#carousel-da" data-slide="prev" data-ss1577715498="1"><span class="carousel-control-prev-icon"></span> <span class="sr-only">Previous</span></a> <a class="carousel-control-next" href="#carousel-da" data-slide="next" data-ss1577715498="1"><span class="carousel-control-next-icon"></span> <span class="sr-only">Next</span></a>
+					</div>
+
+                    <div class="alert alert-dismissable alert-danger">
+						<button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+							×
+						</button>
+						<h4>
+							Alerta!
+						</h4> <strong>Peligro!</strong> Recomendacion <a href="#" class="alert-link" data-ss1577715498="1">alert link</a>
+					</div>
+
+            <table class="table table-hover table-sm tabla-medicion">
+						<thead>
+							<tr>
+								<th>Variable</th>
+								<th>Medición</th>
+								<th>Estado</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td id="da-dil1"></td>
+								<td id="da-dil1-value"></td>
+								<td id="da-dil1-stat"></td>
+							</tr>
+                            <tr>
+								<td id="da-agv-in"></td>
+								<td id="da-agv-in-value"></td>
+								<td id="da-agv-in-stat"></td>
+							</tr>
+                            <tr>
+								<td id="da-dqo-in"></td>
+								<td id="da-dqo-in-value"></td>
+								<td id="da-dqo-in-stat"></td>
+							</tr>
+                            <tr>
+								<td id="da-biomasa-x"></td>
+								<td id="da-biomasa-x-value"></td>
+								<td id="da-biomasa-x-stat"></td>
+							</tr>
+                            <tr>
+								<td id="da-dqo-out"></td>
+								<td id="da-dqo-out-value"></td>
+								<td id="da-dqo-out-stat"></td>
+							</tr>
+                            <tr>
+								<td id="da-agv-out"></td>
+								<td id="da-agv-out-value"></td>
+								<td id="da-agv-out-stat"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div> <!--    end row-da-charts        -->
+
+	<div id="timeline"></div>
+
+			<div id="mec-section" class="row">
+				<div class="col-md-8">
+					<h3>MEC</h3>
+					<div class="row">
+						<div class="col-md-4">
+                            <div id="mec-chart-area1"></div>
+                            <div id="mec-chart-area4"></div>
+                            <div id="mec-chart-area7"></div>
+                            <div id="mec-chart-area10"></div>
+						</div>
+						<div class="col-md-4">
+                            <div id="mec-chart-area2"></div>
+                            <div id="mec-chart-area5"></div>
+                            <div id="mec-chart-area8"></div>
+						</div>
+						<div class="col-md-4">
+                            <div id="mec-chart-area3"></div>
+                            <div id="mec-chart-area6"></div>
+                            <div id="mec-chart-area9"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+                    <div class="carousel slide" id="carousel-mec" data-interval="11000">
+						<ol class="carousel-indicators">
+							<li data-slide-to="0" data-target="#carousel-mec" class="active">
+							</li>
+							<li data-slide-to="1" data-target="#carousel-mec">
+							</li>
+							<li data-slide-to="2" data-target="#carousel-mec">
+							</li>
+						</ol>
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<img class="d-block w-100" alt="Carousel Bootstrap First" src={% static 'backgrounds/carucel_1600_500_f0f0f0.jpg' %}>
+								<div class="carousel-caption">
+									<h5 style="color:black;">MEC - Última medición</h5>
+									<div id="mec-estado" class="carousel-text"> </div>
+								</div>
+							</div>
+							<div class="carousel-item">
+								<img class="d-block w-100" alt="Carousel Bootstrap Second" src={% static 'backgrounds/carucel_1600_500_f0f0f0.jpg' %}>
+								<div class="carousel-caption">
+									<h5 style="color:black;">MEC - Errores</h5>
+                                    <div id="mec-errores" class="carousel-text"> </div>
+
+								</div>
+							</div>
+							<div class="carousel-item">
+								<img class="d-block w-100" alt="Carousel Bootstrap Third" src={% static 'backgrounds/carucel_1600_500_f0f0f0.jpg' %}>
+								<div class="carousel-caption">
+									<h5 style="color:black;">MEC - Recomendaciones</h5>
+                                    <div id="mec-recomendaciones" class="carousel-text"> </div>
+								</div>
+							</div>
+						</div> <a class="carousel-control-prev" href="#carousel-mec" data-slide="prev" data-ss1577715498="1"><span class="carousel-control-prev-icon"></span> <span class="sr-only">Previous</span></a> <a class="carousel-control-next" href="#carousel-mec" data-slide="next" data-ss1577715498="1"><span class="carousel-control-next-icon"></span> <span class="sr-only">Next</span></a>
+					</div>
+            <table class="table table-hover table-sm tabla-medicion">
+						<thead>
+							<tr>
+								<th>Variable</th>
+								<th>Medición</th>
+								<th>Estado</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td id="mec-agv-in"></td>
+								<td id="mec-agv-in-value"></td>
+								<td id="mec-agv-in-stat"></td>
+							</tr>
+                            <tr>
+								<td id="mec-dil2"></td>
+								<td id="mec-dil2-value"></td>
+								<td id="mec-dil2-stat"></td>
+							</tr>
+                            <tr>
+								<td id="mec-eapp"></td>
+								<td id="mec-eapp-value"></td>
+								<td id="mec-eapp-stat"></td>
+							</tr>
+                            <tr>
+								<td id="mec-ace"></td>
+								<td id="mec-ace-value"></td>
+								<td id="mec-ace-stat"></td>
+							</tr>
+                            <tr>
+								<td id="mec-xa"></td>
+								<td id="mec-xa-value"></td>
+								<td id="mec-xa-stat"></td>
+							</tr>
+                            <tr>
+								<td id="mec-xm"></td>
+								<td id="mec-xm-value"></td>
+								<td id="mec-xm-stat"></td>
+							</tr>
+                            <tr>
+								<td id="mec-xh"></td>
+								<td id="mec-xh-value"></td>
+								<td id="mec-xh-stat"></td>
+							</tr>
+                            <tr>
+								<td id="mec-mox"></td>
+								<td id="mec-mox-value"></td>
+								<td id="mec-mox-stat"></td>
+							</tr>
+                            <tr>
+								<td id="mec-imec"></td>
+								<td id="mec-imec-value"></td>
+								<td id="mec-imec-stat"></td>
+							</tr>
+                            <tr>
+								<td id="mec-qh2"></td>
+								<td id="mec-qh2-value"></td>
+								<td id="mec-qh2-stat"></td>
+							</tr>
+
+						</tbody>
+					</table>
+				</div>
+			</div> <!--    end row-mec-charts        -->
+
+
+</div><!--  END CONTAINER  -->
+
+
+
+<!-- External JS Libraries -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+<!--    <script src="{% static 'js/bootstrap.min.js.map' %}"></script>-->
+    <script src="{% static 'js/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'js/d3.min.js' %}"></script>
+    <script src="{% static 'js/d3-tip.js' %}"></script>
+<!-- Custom JS -->
+
+
+<!--    <script>-->
+<!--        var data_src = "{% url 'api:data-mediciones' %}";-->
+<!--    </script>-->
+
+    <script src="{% static 'js/timeline.js' %}"></script>
+    <script src="{% static 'js/line_chart.js' %}"></script>
+    <script src="{% static 'js/timeline.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+
+
+{% endblock %}

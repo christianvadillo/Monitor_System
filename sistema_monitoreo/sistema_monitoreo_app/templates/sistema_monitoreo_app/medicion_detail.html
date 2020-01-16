@@ -1,0 +1,282 @@
+{% extends "sistema_monitoreo_app/basic_dash.html" %}
+{% block body_block %}
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="page-header">
+				<h3>Registro de medición #{{medicion.id}}</h3>
+				<h5><small> Fecha: {{ medicion.date}}</small></h5>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4">
+			<div class="page-header">
+				<h2>DA</h2>
+                <h4>Estado:
+                    {% if medicion.da_estado == "Normal" %}
+                    <span class="badge badge-success">{{ medicion.da_estado }}</span></h6>
+                    {% else %}
+                    <span class="badge badge-danger">{{ medicion.da_estado }}</span></h6>
+                    {% endif %}
+                </h4>
+			</div>
+            <table class="table table-hover table-sm tabla-medicion">
+				<thead>
+					<tr>
+						<th>Variable</th>
+						<th>Valor</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Dilución</td>
+						<td>{{ medicion.da_dil1 }}</td>
+					</tr>
+					<tr class="">
+						<td>AGV de Entrada</td>
+						<td>{{ medicion.da_agv_in }}</td>
+					</tr>
+					<tr class="">
+						<td>DQO de Entrada</td>
+						<td>{{ medicion.da_dqo_in }}</td>
+					</tr>
+					<tr class="">
+						<td>Biomasa</td>
+						<td>{{ medicion.da_biomasa_x }}</td>
+					</tr>
+					<tr class=>
+						<td>DQO de Salida</td>
+						<td>{{ medicion.da_dqo_out }}</td>
+					</tr>
+                    <tr>
+						<td>AGV de Salida</td>
+						<td>{{ medicion.da_agv_out }}</td>
+					</tr>
+				</tbody>
+			</table>
+
+		</div>
+		<div class="col-md-4">
+			<div class="page-header">
+				<h2>MEC</h2>
+                <h4>Estado:
+                    {% if medicion.mec_estado == "Normal" %}
+                    <span class="badge badge-success">{{ medicion.mec_estado }}</span></h6>
+                    {% else %}
+                    <span class="badge badge-danger">{{ medicion.mec_estado }}</span></h6>
+                    {% endif %}
+                </h4>
+			</div>
+            <table class="table table-hover table-sm tabla-medicion">
+				<thead>
+					<tr>
+						<th>Variable</th>
+						<th>Valor</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Dilución</td>
+						<td>{{ medicion.mec_dil2 }}</td>
+					</tr>
+					<tr class="">
+						<td>AGV de Entrada</td>
+						<td>{{ medicion.mec_agv_in }}</td>
+					</tr>
+					<tr class="">
+						<td>Eaap</td>
+						<td>{{ medicion.mec_eapp }}</td>
+					</tr>
+					<tr class="">
+						<td>Acetato de Salida</td>
+						<td>{{ medicion.mec_ace }}</td>
+					</tr>
+					<tr class=>
+						<td>Biomasa Anodofílica de Salida</td>
+						<td>{{ medicion.mec_xa }}</td>
+					</tr>
+                    <tr>
+						<td>Biomasa Metanogénicas de Salida</td>
+						<td>{{ medicion.mec_xm }}</td>
+					</tr>
+                    <tr>
+						<td>Biomasa Hidrogenotropicas de Salida</td>
+						<td>{{ medicion.mec_xh }}</td>
+					</tr>
+                    <tr>
+						<td>Mediador de oxidación</td>
+						<td>{{ medicion.mec_mox }}</td>
+					</tr>
+                    <tr>
+						<td>Corriente (Imec)</td>
+						<td>{{ medicion.mec_imec }}</td>
+					</tr>
+                    <tr>
+						<td>Flujo de Hidrógeno</td>
+						<td>{{ medicion.mec_qh2 }}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="col-md-4">
+			<div class="page-header">
+				<h2>FBR</h2>
+                <h4>Estado:
+                    {% if medicion.fbr_estado == "Normal" %}
+                    <span class="badge badge-success">{{ medicion.fbr_estado }}</span></h6>
+                    {% else %}
+                    <span class="badge badge-danger">{{ medicion.fbr_estado }}</span></h6>
+                    {% endif %}
+                </h4>
+			</div>
+            <table class="table table-hover table-sm tabla-medicion">
+				<thead>
+					<tr>
+						<th>
+							Variable
+						</th>
+						<th>
+							Valor
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							N/A
+						</td>
+						<td>
+							N/A
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4">
+			<table class="table table-hover table-condensed table-sm">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Error</th>
+<!--						<th>-->
+<!--							Recomendación-->
+<!--						</th>-->
+						<th>Variables afectadas</th>
+					</tr>
+				</thead>
+				<tbody>
+                {% for error_detail in errores_da %}
+					<tr class="table-danger">
+						<td>{{ forloop.counter }}
+						</td>
+						<td>
+                            <a href="{% url 'sistema_monitoreo_app:error-detail' error_detail.id %}">{{error_detail.nombre}} </a>
+						</td>
+<!--                        {% for r in error_detail.tieneRecomendacion.all %}-->
+<!--						<td>-->
+<!--							{{r.nombre }}-->
+<!--                            {% empty %}-->
+<!--                            No Definido-->
+<!--						</td>-->
+<!--                        {% endfor %}-->
+						<td>
+                            <ul>
+                                {% for v in error_detail.variable.all %}
+                                <li>{{v}}</li>
+                                {% empty %}
+                                <li>No definido</li>
+                                {% endfor %}
+                            </ul>
+						</td>
+					</tr>
+                {% endfor %}
+				</tbody>
+			</table>
+		</div>
+		<div class="col-md-4">
+            			<table class="table table-hover table-condensed table-sm">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Error</th>
+<!--						<th>-->
+<!--							Recomendación-->
+<!--						</th>-->
+						<th>Variables afectadas</th>
+					</tr>
+				</thead>
+				<tbody>
+                {% for error_detail in errores_mec %}
+					<tr class="table-danger">
+						<td>{{ forloop.counter }}</td>
+						<td>
+                            <a href="{% url 'sistema_monitoreo_app:error-detail' error_detail.id %}">{{error_detail.nombre}} </a>
+						</td>
+<!--                        {% for r in error_detail.tieneRecomendacion.all %}-->
+<!--						<td>-->
+<!--							{{r.nombre }}-->
+<!--                            {% empty %}-->
+<!--                            No Definido-->
+<!--						</td>-->
+<!--                        {% endfor %}-->
+						<td>
+                            <ul>
+                                {% for v in error_detail.variable.all %}
+                                <li>{{v}}</li>
+                                {% empty %}
+                                <li>No definido</li>
+                                {% endfor %}
+                            </ul>
+						</td>
+					</tr>
+                {% endfor %}
+				</tbody>
+			</table>
+		</div>
+		<div class="col-md-4">
+						<table class="table table-hover table-condensed table-sm">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Error</th>
+<!--						<th>-->
+<!--							Recomendación-->
+<!--						</th>-->
+						<th>Variables afectadas</th>
+					</tr>
+				</thead>
+				<tbody>
+                {% for error_detail in errores_fbr %}
+					<tr class="table-danger">
+						<td>{{ forloop.counter }}</td>
+						<td>
+                            <a href="{% url 'sistema_monitoreo_app:error-detail' error_detail.id %}">{{error_detail.nombre}} </a>
+						</td>
+<!--                        {% for r in error_detail.tieneRecomendacion.all %}-->
+<!--						<td>-->
+<!--							{{r.nombre }}-->
+<!--                            {% empty %}-->
+<!--                            No Definido-->
+<!--						</td>-->
+<!--                        {% endfor %}-->
+						<td>
+                            <ul>
+                                {% for v in error_detail.variable.all %}
+                                <li>{{v}}</li>
+                                {% empty %}
+                                <li>No definido</li>
+                                {% endfor %}
+                            </ul>
+						</td>
+					</tr>
+                {% endfor %}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+{% endblock %}

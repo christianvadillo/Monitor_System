@@ -1,0 +1,16 @@
+{% extends "sistema_monitoreo_app/basic_dash.html" %}
+{% load crispy_forms_tags %}
+
+{% block body_block %}
+<H1> Editar {{error_detail.nombre}} </H1>
+<form method="post">
+<!-- request form as             -->
+    {{ form|crispy  }}
+    {% csrf_token %}
+    <button type="submit" class="btn btn-primary">Actualizar</button>
+    <a class="btn btn-primary" href="{% url 'sistema_monitoreo_app:error-delete' error_detail.id%}" role="button">Eliminar</a>
+
+
+</form>
+
+{% endblock %}

@@ -1,0 +1,96 @@
+#chart-area svg {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+
+
+#logo {
+  height:50px;
+}
+
+.navbar-brand {
+  height: 60px;
+  padding: 5px 0px;
+}
+
+body {
+  background-color: white;
+}
+
+.axis {
+	font: 8px sans-serif;
+}
+.axis path,
+.axis line {
+  fill: none;
+  stroke: black;
+  stroke-width: 1px;
+  shape-rendering: crispEdges;
+}
+
+.line {
+  fill: none;
+  stroke-width: 0.6px;
+}
+.grid line {
+  stroke: lightgrey;
+  stroke-opacity: 0.4;
+  shape-rendering: crispEdges;
+}
+.grid path {
+  stroke-width: 0;
+}
+
+.overlay {
+  fill: none;
+  pointer-events: all;
+}
+
+.focus circle {
+  fill: #F1F3F3;
+  stroke: #777;
+  stroke-width: 2px;
+}
+
+.hover-line {
+  stroke: #777;
+  stroke-width: 1px;
+  stroke-dasharray: 3,3;
+}
+
+#selections .col-md-4 {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+
+.carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23f00' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+}
+
+.carousel-control-next-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23f00' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+}
+
+.carousel-indicators .active{
+    background-color: #f00;
+}
+
+.carousel slide{
+ color: black;
+}
+
+.carousel-text{
+  font-size: 5px;
+  font-size: 1vw;
+ color: black;
+}
+
+.tabla-medicion {
+  font-size: 5px;
+  font-size: .7vw;
+  #color: red;
+}
+

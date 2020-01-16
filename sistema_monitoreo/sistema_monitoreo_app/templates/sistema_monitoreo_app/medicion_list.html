@@ -1,0 +1,69 @@
+{% extends "sistema_monitoreo_app/basic_dash.html" %}
+{% block body_block %}
+
+  <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
+
+<table class="table">
+    <thead class="thead-dark">
+    <tr>
+        <th scope="col">id</th>
+        <th scope="col">Fecha</th>
+        <th scope="col">Estado DA</th>
+        <th scope="col">Estado MEC</th>
+        <th scope="col">Estado FBR</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for medicion in mediciones %}
+    <tr>
+        <td>{{medicion.id}} </td>
+        <td><a href="{% url 'sistema_monitoreo_app:medicion-detail' medicion.id %}"> {{ medicion.date }}</a></td>
+        <td>{{ medicion.estado_da  }}</td>
+        <td>{{ medicion.estado_mec }}</td>
+        <td>{{ medicion.estado_fbr }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<h7><a href="{% url 'sistema_monitoreo_app:medicion-create'  %}"> Agregar medición</a></h7>
+{% endblock %}
+
+
+<!--<table>-->
+<!--        <tr>-->
+<!--&lt;!&ndash;            {% for field in fields %}&ndash;&gt;-->
+<!--&lt;!&ndash;            <th> {{ field }}</th>&ndash;&gt;-->
+<!--&lt;!&ndash;            {% endfor %}&ndash;&gt;-->
+<!--            <th> id </th>-->
+<!--            <th> Fecha </th>-->
+<!--            <th> Estado DA </th>-->
+<!--            <th> Estado MEC </th>-->
+<!--            <th> Estado FBR </th>-->
+<!--        </tr>-->
+<!--        {% for medicion in mediciones %}-->
+<!--        <tr>-->
+<!--            <td><a href="{% url 'sistema_monitoreo_app:medicion-detail' medicion.id %}">{{medicion.id}} </a></td>-->
+<!--            <td>{{ medicion.date }}</td>-->
+<!--&lt;!&ndash;            <td>{{ medicion.dil1  }}</td>&ndash;&gt;-->
+<!--&lt;!&ndash;            <td>{{ medicion.agv_in_da  }}</td>&ndash;&gt;-->
+<!--&lt;!&ndash;            <td>{{ medicion.dqo_in_da  }}</td>&ndash;&gt;-->
+<!--&lt;!&ndash;            <td>{{ medicion.biomasa_x  }}</td>&ndash;&gt;-->
+<!--&lt;!&ndash;            <td>{{ medicion.dqo_out  }}</td>&ndash;&gt;-->
+<!--&lt;!&ndash;            <td>{{ medicion.agv_out_da  }}</td>&ndash;&gt;-->
+<!--&lt;!&ndash;            <td>{{ medicion.agv_in_mec  }}</td>&ndash;&gt;-->
+<!--&lt;!&ndash;            <td>{{ medicion.dil2  }}</td>&ndash;&gt;-->
+<!--&lt;!&ndash;            <td>{{ medicion.ace  }}</td>&ndash;&gt;-->
+<!--&lt;!&ndash;            <td>{{ medicion.xa  }}</td>&ndash;&gt;-->
+<!--&lt;!&ndash;            <td>{{ medicion.xm  }}</td>&ndash;&gt;-->
+<!--&lt;!&ndash;            <td>{{ medicion.xh  }}</td>&ndash;&gt;-->
+<!--&lt;!&ndash;            <td>{{ medicion.mox  }}</td>&ndash;&gt;-->
+<!--&lt;!&ndash;            <td>{{ medicion.imec  }}</td>&ndash;&gt;-->
+<!--&lt;!&ndash;            <td>{{ medicion.qh2  }}</td>&ndash;&gt;-->
+<!--            <td>{{ medicion.estado_da  }}</td>-->
+<!--            <td>{{ medicion.estado_mec }}</td>-->
+<!--            <td>{{ medicion.estado_fbr }}</td>-->
+<!--            <td>{{ medicion.error }}</td>-->
+<!--            <td>{{ medicion.recomendacion }}</td>-->
+<!--        </tr>-->
+<!--    {% endfor %}-->
+<!--</table>-->

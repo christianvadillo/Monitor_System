@@ -1,0 +1,161 @@
+{% extends "sistema_monitoreo_app/basic_dash.html" %}
+{% block body_block %}
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="page-header">
+				<h3>Biorrefinería</h3>
+                {% now "jS F Y H:i" %}
+			</div>
+		</div>
+	</div>
+	<div class="row">
+        {% for proceso in proceso_list %}
+		<div class="col-md-4">
+			<div class="page-header">
+				<h2>{{proceso.nombre}}</h2>
+			</div>
+            <table class="table-responsive-sm table-hover tabla-medicion">
+				<thead>
+					<tr>
+						<th>Variable</th>
+						<th>Mínimo</th>
+                        <th>Máximo</th>
+                        <th>Unidad</th>
+					</tr>
+				</thead>
+				<tbody>
+                {% for variable in proceso.tieneVariable.all %}
+                <tr>
+                    <td>{{variable.nombre}}</td>
+                    <td>{{variable.minimo|floatformat:3}}</td>
+                    <td>{{variable.maximo|floatformat:3}}</td>
+                    <td>{{variable.unidad}}</td>
+
+                </tr>
+                {% endfor %}
+				</tbody>
+			</table>
+		</div>
+        {% endfor %}
+    </div>
+	<div class="page-header">
+		<h3>Errores y Recomendaciones</h3>
+	</div>
+	<div class="row">
+		<div class="col-md-4">
+			<table class="table-responsive-sm table-hover tabla-medicion">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Error</th>
+<!--						<th>-->
+<!--							Recomendación-->
+<!--						</th>-->
+						<th>Recomendación</th>
+					</tr>
+				</thead>
+				<tbody>
+                {% for error_detail in errores_da %}
+					<tr class="table-danger">
+						<td>{{ forloop.counter }}
+						</td>
+						<td>
+                            <a href="{% url 'sistema_monitoreo_app:error-detail' error_detail.id %}">{{error_detail.nombre}} </a>
+						</td>
+<!--                        {% for r in error_detail.tieneRecomendacion.all %}-->
+<!--						<td>-->
+<!--							{{r.nombre }}-->
+<!--                            {% empty %}-->
+<!--                            No Definido-->
+<!--						</td>-->
+<!--                        {% endfor %}-->
+						<td>
+							{% for recomendacion in error_detail.tieneRecomendacion.all %}
+							<a class="text-break" href="{% url 'sistema_monitoreo_app:error-detail' error_detail.id %}">
+								{{recomendacion.nombre}} </a>
+							{% endfor %}
+						</td>
+					</tr>
+                {% endfor %}
+				</tbody>
+			</table>
+		</div>
+		<div class="col-md-4">
+            			<table class="table-responsive-sm table-hover tabla-medicion">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Error</th>
+<!--						<th>-->
+<!--							Recomendación-->
+<!--						</th>-->
+						<th>Variables afectadas</th>
+					</tr>
+				</thead>
+				<tbody>
+                {% for error_detail in errores_fbr %}
+					<tr class="table-danger">
+						<td>{{ forloop.counter }}</td>
+						<td>
+                            <a  href="{% url 'sistema_monitoreo_app:error-detail' error_detail.id %}">{{error_detail.nombre}} </a>
+						</td>
+<!--                        {% for r in error_detail.tieneRecomendacion.all %}-->
+<!--						<td>-->
+<!--							{{r.nombre }}-->
+<!--                            {% empty %}-->
+<!--                            No Definido-->
+<!--						</td>-->
+<!--                        {% endfor %}-->
+						<td>
+							{% for recomendacion in error_detail.tieneRecomendacion.all %}
+							<a class="text-break" href="{% url 'sistema_monitoreo_app:error-detail' error_detail.id %}">
+								{{recomendacion.nombre}} </a>
+							{% endfor %}
+						</td>
+					</tr>
+                {% endfor %}
+				</tbody>
+			</table>
+		</div>
+		<div class="col-md-4">
+						<table class="table-responsive-sm table-hover tabla-medicion">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Error</th>
+<!--						<th>-->
+<!--							Recomendación-->
+<!--						</th>-->
+						<th>Variables afectadas</th>
+					</tr>
+				</thead>
+				<tbody>
+                {% for error_detail in errores_mec %}
+					<tr class="table-danger">
+						<td>{{ forloop.counter }}</td>
+						<td>
+                            <a href="{% url 'sistema_monitoreo_app:error-detail' error_detail.id %}">{{error_detail.nombre}} </a>
+						</td>
+<!--                        {% for r in error_detail.tieneRecomendacion.all %}-->
+<!--						<td>-->
+<!--							{{r.nombre }}-->
+<!--                            {% empty %}-->
+<!--                            No Definido-->
+<!--						</td>-->
+<!--                        {% endfor %}-->
+						<td>
+							{% for recomendacion in error_detail.tieneRecomendacion.all %}
+							<a class="text-break" href="{% url 'sistema_monitoreo_app:error-detail' error_detail.id %}">
+								{{recomendacion.nombre}} </a>
+							{% endfor %}
+						</td>
+					</tr>
+                {% endfor %}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "sistema_monitoreo_app/basic_dash.html" %}
+{% load crispy_forms_tags %}
+
+{% block body_block %}
+<H1> Creando nuevo error </H1>
+<form method="post">
+<!-- request form as             -->
+    {{ form|crispy  }}
+    {% csrf_token %}
+    <button type="submit" class="btn btn-primary">Crear</button>
+
+</form>
+
+{% endblock %}

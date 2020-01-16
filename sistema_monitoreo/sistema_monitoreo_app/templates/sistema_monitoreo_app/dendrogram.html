@@ -1,0 +1,4583 @@
+{% extends "sistema_monitoreo_app/basic_dash.html" %}
+{% load static %}
+{% block body_block %}
+
+<link rel="stylesheet" href="{% static 'css/dendrogram_style.css' %}">
+
+
+	<h2 class="title">Ontología:&nbsp;<a href="javascript:showpanel('ontoinfo');">http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria</a></h2>
+
+	<hr>
+
+
+		<div class="row">
+			<h3>Clases (14)</h3>
+			<div class="col-md-12" id="graph_classes">
+			</div>
+		</div>
+
+		<div class="row">
+			<h3>Propiedades (48)</h3>
+			<div class="col-md-12" id="graph_properties">
+
+			</div>
+
+		</div>
+	<hr>
+
+
+
+
+<div class="hidden" id="ontoinfo">
+	<h2>Ontología: <a href="" target="_blank" class="class"  title="Try to open original URI"></a></h2>
+
+	<hr class="margintop">
+
+
+		<em>No annotations available</em>
+
+</div>
+
+
+
+<div class="hidden" id="2">
+
+
+	<h2 class="entity-section">Clase: <a href="http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#Biorrefineria" class="class" target="_blank"
+                                          title="Try to open original URI">biorrefineria:Biorrefineria</a>
+	</h2>
+	<hr>
+
+
+	<p><b class="section-title">Label: </b>Biorrefineria</p>
+
+
+        <p><b class="section-title">Description: </b>Una biorrefineria de produccion de hidrogeno</p>
+
+
+
+
+
+		<hr>
+
+
+
+
+
+		<p><b class="section-title">In Domain Of:</b> <a href="javascript:showpanel('60');"  class="prop">biorrefineria:tieneProceso</a>  </p>
+
+
+
+		<p><b class="section-title">In Range Of:</b> <a href="javascript:showpanel('52');" class="prop">biorrefineria:esProcesoDe</a>  </p>
+
+
+	<hr>
+	<b class="section-title">Implementación:</b>
+	<pre class="turtlesource">@prefix : &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorefineria#&gt; .
+@prefix biorrefineria: &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix obda: &lt;https://w3id.org/obda/vocabulary#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix swrl: &lt;http://www.w3.org/2003/11/swrl#&gt; .
+@prefix swrl2: &lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt; .
+@prefix swrlb: &lt;http://www.w3.org/2003/11/swrlb#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+biorrefineria:Biorrefineria a owl:Class ;
+    rdfs:comment &quot;Una biorrefiner�a de producci�no de hidr�geno&quot;^^xsd:string ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty biorrefineria:tieneNombre ;
+            owl:qualifiedCardinality &quot;1&quot;^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:onProperty biorrefineria:tieneProceso ;
+            owl:someValuesFrom biorrefineria:Proceso ] .
+
+</pre>
+
+</div>
+
+
+
+
+<div class="hidden" id="3">
+
+
+	<h2 class="entity-section">Clase: <a href="http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#Error" class="class" target="_blank"
+                                          title="Try to open original URI">biorrefineria:Error</a>
+	</h2>
+	<hr>
+
+
+	<p><b class="section-title">Label: </b>Error</p>
+
+
+
+
+
+
+		<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+		<p><b class="section-title">In Domain Of:</b> <a href="javascript:showpanel('23');"  class="prop">biorrefineria:tieneDescripcionDeError</a> | <a href="javascript:showpanel('29');"  class="prop">biorrefineria:tieneNivelDePeligro</a> | <a href="javascript:showpanel('45');"  class="prop">biorrefineria:afectaVariable</a> | <a href="javascript:showpanel('50');"  class="prop">biorrefineria:esErrorDe</a> | <a href="javascript:showpanel('59');"  class="prop">biorrefineria:tieneLecturaAnomala</a> | <a href="javascript:showpanel('61');"  class="prop">biorrefineria:tieneRecomendacion</a>  </p>
+
+
+
+		<p><b class="section-title">In Range Of:</b> <a href="javascript:showpanel('53');" class="prop">biorrefineria:esRecomendacionDe</a> | <a href="javascript:showpanel('56');" class="prop">biorrefineria:tieneError</a>  </p>
+
+
+	<hr>
+	<b class="section-title">Implementación:</b>
+	<pre class="turtlesource">@prefix : &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorefineria#&gt; .
+@prefix biorrefineria: &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix obda: &lt;https://w3id.org/obda/vocabulary#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix swrl: &lt;http://www.w3.org/2003/11/swrl#&gt; .
+@prefix swrl2: &lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt; .
+@prefix swrlb: &lt;http://www.w3.org/2003/11/swrlb#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+biorrefineria:Error a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty biorrefineria:tieneDescripcionDeError ;
+            owl:qualifiedCardinality &quot;1&quot;^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty biorrefineria:tieneNombre ;
+            owl:qualifiedCardinality &quot;1&quot;^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:onProperty biorrefineria:afectaVariable ;
+            owl:someValuesFrom biorrefineria:Variable ],
+        [ a owl:Restriction ;
+            owl:onProperty biorrefineria:tieneLecturaAnomala ;
+            owl:someValuesFrom biorrefineria:Lectura ],
+        [ a owl:Restriction ;
+            owl:onProperty biorrefineria:tieneRecomendacion ;
+            owl:someValuesFrom biorrefineria:Recomendacion ],
+        [ a owl:Restriction ;
+            owl:onProperty biorrefineria:esErrorDe ;
+            owl:someValuesFrom biorrefineria:Proceso ],
+        [ a owl:Restriction ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty biorrefineria:tieneNivelDePeligro ;
+            owl:qualifiedCardinality &quot;1&quot;^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:onProperty biorrefineria:tieneFechaDeActualizacion ;
+            owl:someValuesFrom xsd:string ] .
+
+</pre>
+
+</div>
+
+
+
+
+<div class="hidden" id="4">
+
+
+	<h2 class="entity-section">Clase: <a href="http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#Estado" class="class" target="_blank"
+                                          title="Try to open original URI">biorrefineria:Estado</a>
+	</h2>
+	<hr>
+
+
+	<p><b class="section-title">Label: </b>Estado</p>
+
+
+
+
+
+
+		<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+		<p><b class="section-title">In Domain Of:</b> <a href="javascript:showpanel('51');"  class="prop">biorrefineria:esEstadoDeProceso</a>  </p>
+
+
+
+		<p><b class="section-title">In Range Of:</b> <a href="javascript:showpanel('57');" class="prop">biorrefineria:tieneEstadoDeProceso</a>  </p>
+
+
+	<hr>
+	<b class="section-title">Implementación:</b>
+	<pre class="turtlesource">@prefix : &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorefineria#&gt; .
+@prefix biorrefineria: &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix obda: &lt;https://w3id.org/obda/vocabulary#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix swrl: &lt;http://www.w3.org/2003/11/swrl#&gt; .
+@prefix swrl2: &lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt; .
+@prefix swrlb: &lt;http://www.w3.org/2003/11/swrlb#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+biorrefineria:Estado a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty biorrefineria:esEstadoDeProceso ;
+            owl:someValuesFrom biorrefineria:Proceso ] .
+
+</pre>
+
+</div>
+
+
+
+
+<div class="hidden" id="5">
+
+
+	<h2 class="entity-section">Clase: <a href="http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#Lectura" class="class" target="_blank"
+                                          title="Try to open original URI">biorrefineria:Lectura</a>
+	</h2>
+	<hr>
+
+
+	<p><b class="section-title">Label: </b>Lectura</p>
+
+
+
+
+
+
+		<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+		<p><b class="section-title">In Domain Of:</b> <a href="javascript:showpanel('25');"  class="prop">biorrefineria:tieneEstadoDeLectura</a> | <a href="javascript:showpanel('31');"  class="prop">biorrefineria:tieneNumeroDeLectura</a> | <a href="javascript:showpanel('32');"  class="prop">biorrefineria:tieneTipoDeLectura</a> | <a href="javascript:showpanel('35');"  class="prop">biorrefineria:tieneValorCensado</a> | <a href="javascript:showpanel('41');"  class="prop">biorrefineria:esLecturaDe</a>  </p>
+
+
+
+		<p><b class="section-title">In Range Of:</b> <a href="javascript:showpanel('58');" class="prop">biorrefineria:tieneLectura</a> | <a href="javascript:showpanel('59');" class="prop">biorrefineria:tieneLecturaAnomala</a>  </p>
+
+
+	<hr>
+	<b class="section-title">Implementación:</b>
+	<pre class="turtlesource">@prefix : &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorefineria#&gt; .
+@prefix biorrefineria: &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix obda: &lt;https://w3id.org/obda/vocabulary#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix swrl: &lt;http://www.w3.org/2003/11/swrl#&gt; .
+@prefix swrl2: &lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt; .
+@prefix swrlb: &lt;http://www.w3.org/2003/11/swrlb#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+biorrefineria:Lectura a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onDataRange xsd:decimal ;
+            owl:onProperty biorrefineria:tieneNumeroDeLectura ;
+            owl:qualifiedCardinality &quot;1&quot;^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:onProperty biorrefineria:esLecturaDe ;
+            owl:someValuesFrom biorrefineria:Sensor ],
+        [ a owl:Restriction ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty biorrefineria:tieneEstadoDeLectura ;
+            owl:qualifiedCardinality &quot;1&quot;^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty biorrefineria:tieneTipoDeLectura ;
+            owl:qualifiedCardinality &quot;1&quot;^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:onDataRange xsd:decimal ;
+            owl:onProperty biorrefineria:tieneValorCensado ;
+            owl:qualifiedCardinality &quot;1&quot;^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty biorrefineria:tieneEstampaTiempo ;
+            owl:qualifiedCardinality &quot;1&quot;^^xsd:nonNegativeInteger ] .
+
+</pre>
+
+</div>
+
+
+
+
+<div class="hidden" id="6">
+
+
+	<h2 class="entity-section">Clase: <a href="http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#Proceso" class="class" target="_blank"
+                                          title="Try to open original URI">biorrefineria:Proceso</a>
+	</h2>
+	<hr>
+
+
+	<p><b class="section-title">Label: </b>Proceso</p>
+
+
+
+
+
+
+		<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+		<p><b class="section-title">In Domain Of:</b> <a href="javascript:showpanel('46');"  class="prop">biorrefineria:alimentaProceso</a> | <a href="javascript:showpanel('48');"  class="prop">biorrefineria:esAlimentadoPor</a> | <a href="javascript:showpanel('52');"  class="prop">biorrefineria:esProcesoDe</a> | <a href="javascript:showpanel('56');"  class="prop">biorrefineria:tieneError</a> | <a href="javascript:showpanel('57');"  class="prop">biorrefineria:tieneEstadoDeProceso</a> | <a href="javascript:showpanel('62');"  class="prop">biorrefineria:tieneVariable</a>  </p>
+
+
+
+		<p><b class="section-title">In Range Of:</b> <a href="javascript:showpanel('46');" class="prop">biorrefineria:alimentaProceso</a> | <a href="javascript:showpanel('48');" class="prop">biorrefineria:esAlimentadoPor</a> | <a href="javascript:showpanel('50');" class="prop">biorrefineria:esErrorDe</a> | <a href="javascript:showpanel('51');" class="prop">biorrefineria:esEstadoDeProceso</a> | <a href="javascript:showpanel('55');" class="prop">biorrefineria:esVariableDe</a> | <a href="javascript:showpanel('60');" class="prop">biorrefineria:tieneProceso</a>  </p>
+
+
+	<hr>
+	<b class="section-title">Implementación:</b>
+	<pre class="turtlesource">@prefix : &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorefineria#&gt; .
+@prefix biorrefineria: &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix obda: &lt;https://w3id.org/obda/vocabulary#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix swrl: &lt;http://www.w3.org/2003/11/swrl#&gt; .
+@prefix swrl2: &lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt; .
+@prefix swrlb: &lt;http://www.w3.org/2003/11/swrlb#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+biorrefineria:Proceso a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty biorrefineria:tieneEstadoDeProceso ;
+            owl:someValuesFrom biorrefineria:Estado ],
+        [ a owl:Restriction ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty biorrefineria:tieneNombre ;
+            owl:qualifiedCardinality &quot;1&quot;^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:onProperty biorrefineria:tieneVariable ;
+            owl:someValuesFrom biorrefineria:Variable ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom biorrefineria:Proceso ;
+            owl:onProperty biorrefineria:alimentaProceso ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom biorrefineria:Error ;
+            owl:onProperty biorrefineria:tieneError ] .
+
+</pre>
+
+</div>
+
+
+
+
+<div class="hidden" id="7">
+
+
+	<h2 class="entity-section">Clase: <a href="http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#Recomendacion" class="class" target="_blank"
+                                          title="Try to open original URI">biorrefineria:Recomendacion</a>
+	</h2>
+	<hr>
+
+
+	<p><b class="section-title">Label: </b>Recomendacion</p>
+
+
+
+
+
+
+		<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+		<p><b class="section-title">In Domain Of:</b> <a href="javascript:showpanel('24');"  class="prop">biorrefineria:tieneDescripcionDeRecomendacion</a> | <a href="javascript:showpanel('53');"  class="prop">biorrefineria:esRecomendacionDe</a>  </p>
+
+
+
+		<p><b class="section-title">In Range Of:</b> <a href="javascript:showpanel('61');" class="prop">biorrefineria:tieneRecomendacion</a>  </p>
+
+
+	<hr>
+	<b class="section-title">Implementación:</b>
+	<pre class="turtlesource">@prefix : &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorefineria#&gt; .
+@prefix biorrefineria: &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix obda: &lt;https://w3id.org/obda/vocabulary#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix swrl: &lt;http://www.w3.org/2003/11/swrl#&gt; .
+@prefix swrl2: &lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt; .
+@prefix swrlb: &lt;http://www.w3.org/2003/11/swrlb#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+biorrefineria:Recomendacion a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty biorrefineria:tieneFechaDeActualizacion ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty biorrefineria:tieneDescripcionDeRecomendacion ;
+            owl:qualifiedCardinality &quot;1&quot;^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:onProperty biorrefineria:esRecomendacionDe ;
+            owl:someValuesFrom biorrefineria:Error ],
+        [ a owl:Restriction ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty biorrefineria:tieneNombre ;
+            owl:qualifiedCardinality &quot;1&quot;^^xsd:nonNegativeInteger ] .
+
+</pre>
+
+</div>
+
+
+
+
+<div class="hidden" id="8">
+
+
+	<h2 class="entity-section">Clase: <a href="http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#Sensor" class="class" target="_blank"
+                                          title="Try to open original URI">biorrefineria:Sensor</a>
+	</h2>
+	<hr>
+
+
+	<p><b class="section-title">Label: </b>Sensor</p>
+
+
+
+
+
+
+		<hr>
+
+
+
+
+
+
+
+
+		<p><b class="section-title">Has Sub Class (direct):</b> <a href="javascript:showpanel('9');" class="class">biorrefineria:SensorDeHardware</a> | <a href="javascript:showpanel('10');" class="class">biorrefineria:SensorDeSoftware</a>  </p>
+
+
+
+
+
+		<p><b class="section-title">In Domain Of:</b> <a href="javascript:showpanel('28');"  class="prop">biorrefineria:tieneFlujoDeDato</a> | <a href="javascript:showpanel('47');"  class="prop">biorrefineria:censaVariable</a> | <a href="javascript:showpanel('58');"  class="prop">biorrefineria:tieneLectura</a>  </p>
+
+
+
+		<p><b class="section-title">In Range Of:</b> <a href="javascript:showpanel('41');" class="prop">biorrefineria:esLecturaDe</a> | <a href="javascript:showpanel('49');" class="prop">biorrefineria:esCensadoPor</a>  </p>
+
+
+	<hr>
+	<b class="section-title">Implementación:</b>
+	<pre class="turtlesource">@prefix : &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorefineria#&gt; .
+@prefix biorrefineria: &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix obda: &lt;https://w3id.org/obda/vocabulary#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix swrl: &lt;http://www.w3.org/2003/11/swrl#&gt; .
+@prefix swrl2: &lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt; .
+@prefix swrlb: &lt;http://www.w3.org/2003/11/swrlb#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+biorrefineria:Sensor a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onDataRange xsd:decimal ;
+            owl:onProperty biorrefineria:tieneValorMaximo ;
+            owl:qualifiedCardinality &quot;1&quot;^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:onDataRange xsd:decimal ;
+            owl:onProperty biorrefineria:tieneValorMinimo ;
+            owl:qualifiedCardinality &quot;1&quot;^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:onProperty biorrefineria:tieneLectura ;
+            owl:someValuesFrom biorrefineria:Lectura ],
+        [ a owl:Restriction ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty biorrefineria:tieneNombre ;
+            owl:qualifiedCardinality &quot;1&quot;^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:onClass biorrefineria:Variable ;
+            owl:onProperty biorrefineria:censaVariable ;
+            owl:qualifiedCardinality &quot;1&quot;^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty biorrefineria:tieneFlujoDeDato ;
+            owl:qualifiedCardinality &quot;1&quot;^^xsd:nonNegativeInteger ] .
+
+</pre>
+
+</div>
+
+
+
+
+<div class="hidden" id="9">
+
+
+	<h2 class="entity-section">Clase: <a href="http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#SensorDeHardware" class="class" target="_blank"
+                                          title="Try to open original URI">biorrefineria:SensorDeHardware</a>
+	</h2>
+	<hr>
+
+
+	<p><b class="section-title">Label: </b>SensorDeHardware</p>
+
+
+
+
+
+
+		<hr>
+
+
+
+
+		<p><b class="section-title">Has Super Class (direct):</b> <a href="javascript:showpanel('8');" class="class">biorrefineria:Sensor</a>  </p>
+
+
+
+
+
+
+
+
+
+		<p><b class="section-title">In Domain Of:</b> <a href="javascript:showpanel('44');"  class="prop">biorrefineria:mideVariable</a>  </p>
+
+
+
+		<p><b class="section-title">In Range Of:</b> <a href="javascript:showpanel('42');" class="prop">biorrefineria:esMedidoPor</a>  </p>
+
+
+	<hr>
+	<b class="section-title">Implementación:</b>
+	<pre class="turtlesource">@prefix : &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorefineria#&gt; .
+@prefix biorrefineria: &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix obda: &lt;https://w3id.org/obda/vocabulary#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix swrl: &lt;http://www.w3.org/2003/11/swrl#&gt; .
+@prefix swrl2: &lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt; .
+@prefix swrlb: &lt;http://www.w3.org/2003/11/swrlb#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+biorrefineria:SensorDeHardware a owl:Class ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:unionOf ( [ a owl:Restriction ;
+                        owl:onClass biorrefineria:VariableDeEntradaDesconocida ;
+                        owl:onProperty biorrefineria:mideVariable ;
+                        owl:qualifiedCardinality &quot;1&quot;^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass biorrefineria:VariableDeEstadoMedible ;
+                        owl:onProperty biorrefineria:mideVariable ;
+                        owl:qualifiedCardinality &quot;1&quot;^^xsd:nonNegativeInteger ] ) ],
+        biorrefineria:Sensor ;
+    owl:disjointWith biorrefineria:SensorDeSoftware .
+
+</pre>
+
+</div>
+
+
+
+
+<div class="hidden" id="10">
+
+
+	<h2 class="entity-section">Clase: <a href="http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#SensorDeSoftware" class="class" target="_blank"
+                                          title="Try to open original URI">biorrefineria:SensorDeSoftware</a>
+	</h2>
+	<hr>
+
+
+	<p><b class="section-title">Label: </b>SensorDeSoftware</p>
+
+
+
+
+
+
+		<hr>
+
+
+
+
+		<p><b class="section-title">Has Super Class (direct):</b> <a href="javascript:showpanel('8');" class="class">biorrefineria:Sensor</a>  </p>
+
+
+
+
+
+
+
+
+
+		<p><b class="section-title">In Domain Of:</b> <a href="javascript:showpanel('43');"  class="prop">biorrefineria:estimaVariable</a> | <a href="javascript:showpanel('63');"  class="prop">biorrefineria:utilizaParaEstimar</a>  </p>
+
+
+
+		<p><b class="section-title">In Range Of:</b> <a href="javascript:showpanel('40');" class="prop">biorrefineria:esEstimadoPor</a> | <a href="javascript:showpanel('54');" class="prop">biorrefineria:esUsadoParaEstimarPor</a>  </p>
+
+
+	<hr>
+	<b class="section-title">Implementación:</b>
+	<pre class="turtlesource">@prefix : &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorefineria#&gt; .
+@prefix biorrefineria: &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix obda: &lt;https://w3id.org/obda/vocabulary#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix swrl: &lt;http://www.w3.org/2003/11/swrl#&gt; .
+@prefix swrl2: &lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt; .
+@prefix swrlb: &lt;http://www.w3.org/2003/11/swrlb#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+biorrefineria:SensorDeSoftware a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty biorrefineria:utilizaParaEstimar ;
+            owl:someValuesFrom [ a owl:Class ;
+                    owl:unionOf ( biorrefineria:Lectura biorrefineria:VariableDeEntradaControlada ) ] ],
+        [ a owl:Class ;
+            owl:unionOf ( [ a owl:Restriction ;
+                        owl:onClass biorrefineria:VariableDeEntradaDesconocida ;
+                        owl:onProperty biorrefineria:estimaVariable ;
+                        owl:qualifiedCardinality &quot;1&quot;^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass biorrefineria:VariableDeEstadoNoMedible ;
+                        owl:onProperty biorrefineria:estimaVariable ;
+                        owl:qualifiedCardinality &quot;1&quot;^^xsd:nonNegativeInteger ] ) ],
+        biorrefineria:Sensor .
+
+</pre>
+
+</div>
+
+
+
+
+<div class="hidden" id="11">
+
+
+	<h2 class="entity-section">Clase: <a href="http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#Variable" class="class" target="_blank"
+                                          title="Try to open original URI">biorrefineria:Variable</a>
+	</h2>
+	<hr>
+
+
+	<p><b class="section-title">Label: </b>Variable</p>
+
+
+
+
+
+
+		<hr>
+
+
+
+
+
+
+
+
+		<p><b class="section-title">Has Sub Class (direct):</b> <a href="javascript:showpanel('12');" class="class">biorrefineria:VariableDeEntradaControlada</a> | <a href="javascript:showpanel('13');" class="class">biorrefineria:VariableDeEntradaDesconocida</a> | <a href="javascript:showpanel('14');" class="class">biorrefineria:VariableDeEstadoMedible</a> | <a href="javascript:showpanel('15');" class="class">biorrefineria:VariableDeEstadoNoMedible</a>  </p>
+
+
+
+
+
+		<p><b class="section-title">In Domain Of:</b> <a href="javascript:showpanel('33');"  class="prop">biorrefineria:tieneUnidadDeMedida</a> | <a href="javascript:showpanel('38');"  class="prop">biorrefineria:tieneValorNominal</a> | <a href="javascript:showpanel('49');"  class="prop">biorrefineria:esCensadoPor</a> | <a href="javascript:showpanel('55');"  class="prop">biorrefineria:esVariableDe</a>  </p>
+
+
+
+		<p><b class="section-title">In Range Of:</b> <a href="javascript:showpanel('45');" class="prop">biorrefineria:afectaVariable</a> | <a href="javascript:showpanel('47');" class="prop">biorrefineria:censaVariable</a> | <a href="javascript:showpanel('62');" class="prop">biorrefineria:tieneVariable</a>  </p>
+
+
+	<hr>
+	<b class="section-title">Implementación:</b>
+	<pre class="turtlesource">@prefix : &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorefineria#&gt; .
+@prefix biorrefineria: &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix obda: &lt;https://w3id.org/obda/vocabulary#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix swrl: &lt;http://www.w3.org/2003/11/swrl#&gt; .
+@prefix swrl2: &lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt; .
+@prefix swrlb: &lt;http://www.w3.org/2003/11/swrlb#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+biorrefineria:Variable a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty biorrefineria:tieneNombre ;
+            owl:qualifiedCardinality &quot;1&quot;^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:onClass biorrefineria:Sensor ;
+            owl:onProperty biorrefineria:esCensadoPor ;
+            owl:qualifiedCardinality &quot;1&quot;^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:onDataRange xsd:decimal ;
+            owl:onProperty biorrefineria:tieneValorMaximo ;
+            owl:qualifiedCardinality &quot;1&quot;^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:onDataRange xsd:decimal ;
+            owl:onProperty biorrefineria:tieneValorMinimo ;
+            owl:qualifiedCardinality &quot;1&quot;^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty biorrefineria:tieneUnidadDeMedida ;
+            owl:qualifiedCardinality &quot;1&quot;^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:onDataRange xsd:decimal ;
+            owl:onProperty biorrefineria:tieneValorNominal ;
+            owl:qualifiedCardinality &quot;1&quot;^^xsd:nonNegativeInteger ] .
+
+</pre>
+
+</div>
+
+
+
+
+<div class="hidden" id="12">
+
+
+	<h2 class="entity-section">Clase: <a href="http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#VariableDeEntradaControlada" class="class" target="_blank"
+                                          title="Try to open original URI">biorrefineria:VariableDeEntradaControlada</a>
+	</h2>
+	<hr>
+
+
+	<p><b class="section-title">Label: </b>VariableDeEntradaControlada</p>
+
+
+
+
+
+
+		<hr>
+
+
+
+
+		<p><b class="section-title">Has Super Class (direct):</b> <a href="javascript:showpanel('11');" class="class">biorrefineria:Variable</a>  </p>
+
+
+
+
+
+
+
+
+
+		<p><b class="section-title">In Domain Of:</b> <a href="javascript:showpanel('39');"  class="prop">biorrefineria:tieneValorPropuesto</a>  </p>
+
+
+
+
+	<hr>
+	<b class="section-title">Implementación:</b>
+	<pre class="turtlesource">@prefix : &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorefineria#&gt; .
+@prefix biorrefineria: &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix obda: &lt;https://w3id.org/obda/vocabulary#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix swrl: &lt;http://www.w3.org/2003/11/swrl#&gt; .
+@prefix swrl2: &lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt; .
+@prefix swrlb: &lt;http://www.w3.org/2003/11/swrlb#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+biorrefineria:VariableDeEntradaControlada a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onDataRange xsd:decimal ;
+            owl:onProperty biorrefineria:tieneValorPropuesto ;
+            owl:qualifiedCardinality &quot;1&quot;^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom biorrefineria:SensorDeSoftware ;
+            owl:onProperty biorrefineria:esUsadoParaEstimarPor ],
+        biorrefineria:Variable .
+
+</pre>
+
+</div>
+
+
+
+
+<div class="hidden" id="13">
+
+
+	<h2 class="entity-section">Clase: <a href="http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#VariableDeEntradaDesconocida" class="class" target="_blank"
+                                          title="Try to open original URI">biorrefineria:VariableDeEntradaDesconocida</a>
+	</h2>
+	<hr>
+
+
+	<p><b class="section-title">Label: </b>VariableDeEntradaDesconocida</p>
+
+
+
+
+
+
+		<hr>
+
+
+
+
+		<p><b class="section-title">Has Super Class (direct):</b> <a href="javascript:showpanel('11');" class="class">biorrefineria:Variable</a>  </p>
+
+
+
+
+
+
+
+
+
+
+
+
+	<hr>
+	<b class="section-title">Implementación:</b>
+	<pre class="turtlesource">@prefix : &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorefineria#&gt; .
+@prefix biorrefineria: &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix obda: &lt;https://w3id.org/obda/vocabulary#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix swrl: &lt;http://www.w3.org/2003/11/swrl#&gt; .
+@prefix swrl2: &lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt; .
+@prefix swrlb: &lt;http://www.w3.org/2003/11/swrlb#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+biorrefineria:VariableDeEntradaDesconocida a owl:Class ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:unionOf ( [ a owl:Restriction ;
+                        owl:onClass biorrefineria:SensorDeSoftware ;
+                        owl:onProperty biorrefineria:esEstimadoPor ;
+                        owl:qualifiedCardinality &quot;1&quot;^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass biorrefineria:SensorDeHardware ;
+                        owl:onProperty biorrefineria:esMedidoPor ;
+                        owl:qualifiedCardinality &quot;1&quot;^^xsd:nonNegativeInteger ] ) ],
+        biorrefineria:Variable .
+
+</pre>
+
+</div>
+
+
+
+
+<div class="hidden" id="14">
+
+
+	<h2 class="entity-section">Clase: <a href="http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#VariableDeEstadoMedible" class="class" target="_blank"
+                                          title="Try to open original URI">biorrefineria:VariableDeEstadoMedible</a>
+	</h2>
+	<hr>
+
+
+	<p><b class="section-title">Label: </b>VariableDeEstadoMedible</p>
+
+
+
+
+
+
+		<hr>
+
+
+
+
+		<p><b class="section-title">Has Super Class (direct):</b> <a href="javascript:showpanel('11');" class="class">biorrefineria:Variable</a>  </p>
+
+
+
+
+
+
+
+
+
+
+
+
+	<hr>
+	<b class="section-title">Implementación:</b>
+	<pre class="turtlesource">@prefix : &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorefineria#&gt; .
+@prefix biorrefineria: &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix obda: &lt;https://w3id.org/obda/vocabulary#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix swrl: &lt;http://www.w3.org/2003/11/swrl#&gt; .
+@prefix swrl2: &lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt; .
+@prefix swrlb: &lt;http://www.w3.org/2003/11/swrlb#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+biorrefineria:VariableDeEstadoMedible a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass biorrefineria:SensorDeHardware ;
+            owl:onProperty biorrefineria:esMedidoPor ;
+            owl:qualifiedCardinality &quot;1&quot;^^xsd:nonNegativeInteger ],
+        biorrefineria:Variable .
+
+</pre>
+
+</div>
+
+
+
+
+<div class="hidden" id="15">
+
+
+	<h2 class="entity-section">Clase: <a href="http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#VariableDeEstadoNoMedible" class="class" target="_blank"
+                                          title="Try to open original URI">biorrefineria:VariableDeEstadoNoMedible</a>
+	</h2>
+	<hr>
+
+
+	<p><b class="section-title">Label: </b>VariableDeEstadoNoMedible</p>
+
+
+
+
+
+
+		<hr>
+
+
+
+
+		<p><b class="section-title">Has Super Class (direct):</b> <a href="javascript:showpanel('11');" class="class">biorrefineria:Variable</a>  </p>
+
+
+
+
+
+
+
+
+
+
+
+
+	<hr>
+	<b class="section-title">Implementación:</b>
+	<pre class="turtlesource">@prefix : &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorefineria#&gt; .
+@prefix biorrefineria: &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix obda: &lt;https://w3id.org/obda/vocabulary#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix swrl: &lt;http://www.w3.org/2003/11/swrl#&gt; .
+@prefix swrl2: &lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt; .
+@prefix swrlb: &lt;http://www.w3.org/2003/11/swrlb#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+biorrefineria:VariableDeEstadoNoMedible a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass biorrefineria:SensorDeSoftware ;
+            owl:onProperty biorrefineria:esEstimadoPor ;
+            owl:qualifiedCardinality &quot;1&quot;^^xsd:nonNegativeInteger ],
+        biorrefineria:Variable .
+
+</pre>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="hidden" id="45">
+
+	<h2 class="entity-section">Property: <a  href="http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#afectaVariable" class="prop"  target="_blank"
+                                          title="Try to open original URI">biorrefineria:afectaVariable</a>
+	</h2>
+	<hr>
+
+
+	<p><b class="section-title">Label: </b>AfectaVariable</p>
+
+
+
+
+
+		<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+		<p><b class="section-title">Domain:</b> <a href="javascript:showpanel('3');" class="class">biorrefineria:Error</a>  </p>
+
+
+
+		<p><b class="section-title">Range:</b> <a href="javascript:showpanel('11');" class="class">biorrefineria:Variable</a>  </p>
+
+
+	<hr>
+	<b class="section-title">Implementación:</b>
+	<pre class="turtlesource">@prefix : &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorefineria#&gt; .
+@prefix biorrefineria: &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix obda: &lt;https://w3id.org/obda/vocabulary#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix swrl: &lt;http://www.w3.org/2003/11/swrl#&gt; .
+@prefix swrl2: &lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt; .
+@prefix swrlb: &lt;http://www.w3.org/2003/11/swrlb#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+biorrefineria:afectaVariable a owl:ObjectProperty ;
+    rdfs:domain biorrefineria:Error ;
+    rdfs:range biorrefineria:Variable ;
+    rdfs:subPropertyOf owl:topObjectProperty .
+
+</pre>
+
+
+</div>
+
+
+
+<div class="hidden" id="46">
+
+	<h2 class="entity-section">Property: <a  href="http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#alimentaProceso" class="prop"  target="_blank"
+                                          title="Try to open original URI">biorrefineria:alimentaProceso</a>
+	</h2>
+	<hr>
+
+
+	<p><b class="section-title">Label: </b>AlimentaProceso</p>
+
+
+
+
+
+		<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+		<p><b class="section-title">Domain:</b> <a href="javascript:showpanel('6');" class="class">biorrefineria:Proceso</a>  </p>
+
+
+
+		<p><b class="section-title">Range:</b> <a href="javascript:showpanel('6');" class="class">biorrefineria:Proceso</a>  </p>
+
+
+	<hr>
+	<b class="section-title">Implementación:</b>
+	<pre class="turtlesource">@prefix : &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorefineria#&gt; .
+@prefix biorrefineria: &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix obda: &lt;https://w3id.org/obda/vocabulary#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix swrl: &lt;http://www.w3.org/2003/11/swrl#&gt; .
+@prefix swrl2: &lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt; .
+@prefix swrlb: &lt;http://www.w3.org/2003/11/swrlb#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+biorrefineria:alimentaProceso a owl:ObjectProperty ;
+    rdfs:domain biorrefineria:Proceso ;
+    rdfs:range biorrefineria:Proceso ;
+    owl:inverseOf biorrefineria:esAlimentadoPor .
+
+</pre>
+
+
+</div>
+
+
+
+<div class="hidden" id="47">
+
+	<h2 class="entity-section">Property: <a  href="http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#censaVariable" class="prop"  target="_blank"
+                                          title="Try to open original URI">biorrefineria:censaVariable</a>
+	</h2>
+	<hr>
+
+
+	<p><b class="section-title">Label: </b>CensaVariable</p>
+
+
+
+
+
+		<hr>
+
+
+
+
+
+
+
+
+		<p><b class="section-title">Has Sub Property (direct):</b> <a href="javascript:showpanel('43');" class="prop">biorrefineria:estimaVariable</a> | <a href="javascript:showpanel('44');" class="prop">biorrefineria:mideVariable</a>  </p>
+
+
+
+
+
+		<p><b class="section-title">Domain:</b> <a href="javascript:showpanel('8');" class="class">biorrefineria:Sensor</a>  </p>
+
+
+
+		<p><b class="section-title">Range:</b> <a href="javascript:showpanel('11');" class="class">biorrefineria:Variable</a>  </p>
+
+
+	<hr>
+	<b class="section-title">Implementación:</b>
+	<pre class="turtlesource">@prefix : &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorefineria#&gt; .
+@prefix biorrefineria: &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix obda: &lt;https://w3id.org/obda/vocabulary#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix swrl: &lt;http://www.w3.org/2003/11/swrl#&gt; .
+@prefix swrl2: &lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt; .
+@prefix swrlb: &lt;http://www.w3.org/2003/11/swrlb#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+biorrefineria:censaVariable a owl:ObjectProperty ;
+    rdfs:domain biorrefineria:Sensor ;
+    rdfs:range biorrefineria:Variable ;
+    owl:inverseOf biorrefineria:esCensadoPor .
+
+</pre>
+
+
+</div>
+
+
+
+<div class="hidden" id="48">
+
+	<h2 class="entity-section">Property: <a  href="http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#esAlimentadoPor" class="prop"  target="_blank"
+                                          title="Try to open original URI">biorrefineria:esAlimentadoPor</a>
+	</h2>
+	<hr>
+
+
+	<p><b class="section-title">Label: </b>EsAlimentadoPor</p>
+
+
+
+
+
+		<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+		<p><b class="section-title">Domain:</b> <a href="javascript:showpanel('6');" class="class">biorrefineria:Proceso</a>  </p>
+
+
+
+		<p><b class="section-title">Range:</b> <a href="javascript:showpanel('6');" class="class">biorrefineria:Proceso</a>  </p>
+
+
+	<hr>
+	<b class="section-title">Implementación:</b>
+	<pre class="turtlesource">@prefix : &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorefineria#&gt; .
+@prefix biorrefineria: &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix obda: &lt;https://w3id.org/obda/vocabulary#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix swrl: &lt;http://www.w3.org/2003/11/swrl#&gt; .
+@prefix swrl2: &lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt; .
+@prefix swrlb: &lt;http://www.w3.org/2003/11/swrlb#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+biorrefineria:esAlimentadoPor a owl:ObjectProperty ;
+    rdfs:domain biorrefineria:Proceso ;
+    rdfs:range biorrefineria:Proceso ;
+    rdfs:subPropertyOf owl:topObjectProperty .
+
+</pre>
+
+
+</div>
+
+
+
+<div class="hidden" id="49">
+
+	<h2 class="entity-section">Property: <a  href="http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#esCensadoPor" class="prop"  target="_blank"
+                                          title="Try to open original URI">biorrefineria:esCensadoPor</a>
+	</h2>
+	<hr>
+
+
+	<p><b class="section-title">Label: </b>EsCensadoPor</p>
+
+
+
+
+
+		<hr>
+
+
+
+
+
+
+
+
+		<p><b class="section-title">Has Sub Property (direct):</b> <a href="javascript:showpanel('40');" class="prop">biorrefineria:esEstimadoPor</a> | <a href="javascript:showpanel('42');" class="prop">biorrefineria:esMedidoPor</a>  </p>
+
+
+
+
+
+		<p><b class="section-title">Domain:</b> <a href="javascript:showpanel('11');" class="class">biorrefineria:Variable</a>  </p>
+
+
+
+		<p><b class="section-title">Range:</b> <a href="javascript:showpanel('8');" class="class">biorrefineria:Sensor</a>  </p>
+
+
+	<hr>
+	<b class="section-title">Implementación:</b>
+	<pre class="turtlesource">@prefix : &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorefineria#&gt; .
+@prefix biorrefineria: &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix obda: &lt;https://w3id.org/obda/vocabulary#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix swrl: &lt;http://www.w3.org/2003/11/swrl#&gt; .
+@prefix swrl2: &lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt; .
+@prefix swrlb: &lt;http://www.w3.org/2003/11/swrlb#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+biorrefineria:esCensadoPor a owl:ObjectProperty ;
+    rdfs:domain biorrefineria:Variable ;
+    rdfs:range biorrefineria:Sensor ;
+    rdfs:subPropertyOf owl:topObjectProperty .
+
+</pre>
+
+
+</div>
+
+
+
+<div class="hidden" id="50">
+
+	<h2 class="entity-section">Property: <a  href="http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#esErrorDe" class="prop"  target="_blank"
+                                          title="Try to open original URI">biorrefineria:esErrorDe</a>
+	</h2>
+	<hr>
+
+
+	<p><b class="section-title">Label: </b>EsErrorDe</p>
+
+
+
+
+
+		<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+		<p><b class="section-title">Domain:</b> <a href="javascript:showpanel('3');" class="class">biorrefineria:Error</a>  </p>
+
+
+
+		<p><b class="section-title">Range:</b> <a href="javascript:showpanel('6');" class="class">biorrefineria:Proceso</a>  </p>
+
+
+	<hr>
+	<b class="section-title">Implementación:</b>
+	<pre class="turtlesource">@prefix : &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorefineria#&gt; .
+@prefix biorrefineria: &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix obda: &lt;https://w3id.org/obda/vocabulary#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix swrl: &lt;http://www.w3.org/2003/11/swrl#&gt; .
+@prefix swrl2: &lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt; .
+@prefix swrlb: &lt;http://www.w3.org/2003/11/swrlb#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+biorrefineria:esErrorDe a owl:ObjectProperty ;
+    rdfs:domain biorrefineria:Error ;
+    rdfs:range biorrefineria:Proceso ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    owl:inverseOf biorrefineria:tieneError .
+
+</pre>
+
+
+</div>
+
+
+
+<div class="hidden" id="51">
+
+	<h2 class="entity-section">Property: <a  href="http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#esEstadoDeProceso" class="prop"  target="_blank"
+                                          title="Try to open original URI">biorrefineria:esEstadoDeProceso</a>
+	</h2>
+	<hr>
+
+
+	<p><b class="section-title">Label: </b>EsEstadoDeProceso</p>
+
+
+
+
+
+		<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+		<p><b class="section-title">Domain:</b> <a href="javascript:showpanel('4');" class="class">biorrefineria:Estado</a>  </p>
+
+
+
+		<p><b class="section-title">Range:</b> <a href="javascript:showpanel('6');" class="class">biorrefineria:Proceso</a>  </p>
+
+
+	<hr>
+	<b class="section-title">Implementación:</b>
+	<pre class="turtlesource">@prefix : &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorefineria#&gt; .
+@prefix biorrefineria: &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix obda: &lt;https://w3id.org/obda/vocabulary#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix swrl: &lt;http://www.w3.org/2003/11/swrl#&gt; .
+@prefix swrl2: &lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt; .
+@prefix swrlb: &lt;http://www.w3.org/2003/11/swrlb#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+biorrefineria:esEstadoDeProceso a owl:ObjectProperty ;
+    rdfs:domain biorrefineria:Estado ;
+    rdfs:range biorrefineria:Proceso ;
+    owl:inverseOf biorrefineria:tieneEstadoDeProceso .
+
+</pre>
+
+
+</div>
+
+
+
+<div class="hidden" id="40">
+
+	<h2 class="entity-section">Property: <a  href="http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#esEstimadoPor" class="prop"  target="_blank"
+                                          title="Try to open original URI">biorrefineria:esEstimadoPor</a>
+	</h2>
+	<hr>
+
+
+	<p><b class="section-title">Label: </b>EsEstimadoPor</p>
+
+
+
+
+
+		<hr>
+
+
+
+
+		<p><b  class="section-title">Has Super Property (direct):</b> <a href="javascript:showpanel('49');" class="prop">biorrefineria:esCensadoPor</a>  </p>
+
+
+
+
+
+
+
+
+
+		<p><b class="section-title">Domain:</b> <a href="javascript:showpanel('86');" class="class">Na771c5484ffe4ea88164865d3773bb63</a>  </p>
+
+
+
+		<p><b class="section-title">Range:</b> <a href="javascript:showpanel('10');" class="class">biorrefineria:SensorDeSoftware</a>  </p>
+
+
+	<hr>
+	<b class="section-title">Implementación:</b>
+	<pre class="turtlesource">@prefix : &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorefineria#&gt; .
+@prefix biorrefineria: &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix obda: &lt;https://w3id.org/obda/vocabulary#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix swrl: &lt;http://www.w3.org/2003/11/swrl#&gt; .
+@prefix swrl2: &lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt; .
+@prefix swrlb: &lt;http://www.w3.org/2003/11/swrlb#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+biorrefineria:esEstimadoPor a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( biorrefineria:VariableDeEntradaDesconocida biorrefineria:VariableDeEstadoNoMedible ) ] ;
+    rdfs:range biorrefineria:SensorDeSoftware ;
+    rdfs:subPropertyOf biorrefineria:esCensadoPor ;
+    owl:inverseOf biorrefineria:estimaVariable .
+
+</pre>
+
+
+</div>
+
+
+
+<div class="hidden" id="41">
+
+	<h2 class="entity-section">Property: <a  href="http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#esLecturaDe" class="prop"  target="_blank"
+                                          title="Try to open original URI">biorrefineria:esLecturaDe</a>
+	</h2>
+	<hr>
+
+
+	<p><b class="section-title">Label: </b>EsLecturaDe</p>
+
+
+
+
+
+		<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+		<p><b class="section-title">Domain:</b> <a href="javascript:showpanel('5');" class="class">biorrefineria:Lectura</a>  </p>
+
+
+
+		<p><b class="section-title">Range:</b> <a href="javascript:showpanel('8');" class="class">biorrefineria:Sensor</a>  </p>
+
+
+	<hr>
+	<b class="section-title">Implementación:</b>
+	<pre class="turtlesource">@prefix : &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorefineria#&gt; .
+@prefix biorrefineria: &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix obda: &lt;https://w3id.org/obda/vocabulary#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix swrl: &lt;http://www.w3.org/2003/11/swrl#&gt; .
+@prefix swrl2: &lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt; .
+@prefix swrlb: &lt;http://www.w3.org/2003/11/swrlb#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+biorrefineria:esLecturaDe a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:domain biorrefineria:Lectura ;
+    rdfs:range biorrefineria:Sensor ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    owl:inverseOf biorrefineria:tieneLectura .
+
+</pre>
+
+
+</div>
+
+
+
+<div class="hidden" id="42">
+
+	<h2 class="entity-section">Property: <a  href="http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#esMedidoPor" class="prop"  target="_blank"
+                                          title="Try to open original URI">biorrefineria:esMedidoPor</a>
+	</h2>
+	<hr>
+
+
+	<p><b class="section-title">Label: </b>EsMedidoPor</p>
+
+
+
+
+
+		<hr>
+
+
+
+
+		<p><b  class="section-title">Has Super Property (direct):</b> <a href="javascript:showpanel('49');" class="prop">biorrefineria:esCensadoPor</a>  </p>
+
+
+
+
+
+
+
+
+
+		<p><b class="section-title">Domain:</b> <a href="javascript:showpanel('87');" class="class">N3d0bc18ff44c46adafe0c7ff5e75215e</a>  </p>
+
+
+
+		<p><b class="section-title">Range:</b> <a href="javascript:showpanel('9');" class="class">biorrefineria:SensorDeHardware</a>  </p>
+
+
+	<hr>
+	<b class="section-title">Implementación:</b>
+	<pre class="turtlesource">@prefix : &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorefineria#&gt; .
+@prefix biorrefineria: &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix obda: &lt;https://w3id.org/obda/vocabulary#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix swrl: &lt;http://www.w3.org/2003/11/swrl#&gt; .
+@prefix swrl2: &lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt; .
+@prefix swrlb: &lt;http://www.w3.org/2003/11/swrlb#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+biorrefineria:esMedidoPor a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( biorrefineria:VariableDeEntradaDesconocida biorrefineria:VariableDeEstadoMedible ) ] ;
+    rdfs:range biorrefineria:SensorDeHardware ;
+    rdfs:subPropertyOf biorrefineria:esCensadoPor ;
+    owl:inverseOf biorrefineria:mideVariable .
+
+</pre>
+
+
+</div>
+
+
+
+<div class="hidden" id="52">
+
+	<h2 class="entity-section">Property: <a  href="http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#esProcesoDe" class="prop"  target="_blank"
+                                          title="Try to open original URI">biorrefineria:esProcesoDe</a>
+	</h2>
+	<hr>
+
+
+	<p><b class="section-title">Label: </b>EsProcesoDe</p>
+
+
+
+
+
+		<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+		<p><b class="section-title">Domain:</b> <a href="javascript:showpanel('6');" class="class">biorrefineria:Proceso</a>  </p>
+
+
+
+		<p><b class="section-title">Range:</b> <a href="javascript:showpanel('2');" class="class">biorrefineria:Biorrefineria</a>  </p>
+
+
+	<hr>
+	<b class="section-title">Implementación:</b>
+	<pre class="turtlesource">@prefix : &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorefineria#&gt; .
+@prefix biorrefineria: &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix obda: &lt;https://w3id.org/obda/vocabulary#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix swrl: &lt;http://www.w3.org/2003/11/swrl#&gt; .
+@prefix swrl2: &lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt; .
+@prefix swrlb: &lt;http://www.w3.org/2003/11/swrlb#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+biorrefineria:esProcesoDe a owl:ObjectProperty ;
+    rdfs:domain biorrefineria:Proceso ;
+    rdfs:range biorrefineria:Biorrefineria ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    owl:inverseOf biorrefineria:tieneProceso .
+
+</pre>
+
+
+</div>
+
+
+
+<div class="hidden" id="53">
+
+	<h2 class="entity-section">Property: <a  href="http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#esRecomendacionDe" class="prop"  target="_blank"
+                                          title="Try to open original URI">biorrefineria:esRecomendacionDe</a>
+	</h2>
+	<hr>
+
+
+	<p><b class="section-title">Label: </b>EsRecomendacionDe</p>
+
+
+
+
+
+		<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+		<p><b class="section-title">Domain:</b> <a href="javascript:showpanel('7');" class="class">biorrefineria:Recomendacion</a>  </p>
+
+
+
+		<p><b class="section-title">Range:</b> <a href="javascript:showpanel('3');" class="class">biorrefineria:Error</a>  </p>
+
+
+	<hr>
+	<b class="section-title">Implementación:</b>
+	<pre class="turtlesource">@prefix : &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorefineria#&gt; .
+@prefix biorrefineria: &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix obda: &lt;https://w3id.org/obda/vocabulary#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix swrl: &lt;http://www.w3.org/2003/11/swrl#&gt; .
+@prefix swrl2: &lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt; .
+@prefix swrlb: &lt;http://www.w3.org/2003/11/swrlb#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+biorrefineria:esRecomendacionDe a owl:ObjectProperty ;
+    rdfs:domain biorrefineria:Recomendacion ;
+    rdfs:range biorrefineria:Error ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    owl:inverseOf biorrefineria:tieneRecomendacion .
+
+</pre>
+
+
+</div>
+
+
+
+<div class="hidden" id="54">
+
+	<h2 class="entity-section">Property: <a  href="http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#esUsadoParaEstimarPor" class="prop"  target="_blank"
+                                          title="Try to open original URI">biorrefineria:esUsadoParaEstimarPor</a>
+	</h2>
+	<hr>
+
+
+	<p><b class="section-title">Label: </b>EsUsadoParaEstimarPor</p>
+
+
+
+
+
+		<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+		<p><b class="section-title">Domain:</b> <a href="javascript:showpanel('90');" class="class">Ndaf3f64138044f2eac70cb6759b0f774</a>  </p>
+
+
+
+		<p><b class="section-title">Range:</b> <a href="javascript:showpanel('10');" class="class">biorrefineria:SensorDeSoftware</a>  </p>
+
+
+	<hr>
+	<b class="section-title">Implementación:</b>
+	<pre class="turtlesource">@prefix : &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorefineria#&gt; .
+@prefix biorrefineria: &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix obda: &lt;https://w3id.org/obda/vocabulary#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix swrl: &lt;http://www.w3.org/2003/11/swrl#&gt; .
+@prefix swrl2: &lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt; .
+@prefix swrlb: &lt;http://www.w3.org/2003/11/swrlb#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+biorrefineria:esUsadoParaEstimarPor a owl:ObjectProperty ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( biorrefineria:Lectura biorrefineria:VariableDeEntradaControlada ) ] ;
+    rdfs:range biorrefineria:SensorDeSoftware ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    owl:inverseOf biorrefineria:utilizaParaEstimar .
+
+</pre>
+
+
+</div>
+
+
+
+<div class="hidden" id="55">
+
+	<h2 class="entity-section">Property: <a  href="http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#esVariableDe" class="prop"  target="_blank"
+                                          title="Try to open original URI">biorrefineria:esVariableDe</a>
+	</h2>
+	<hr>
+
+
+	<p><b class="section-title">Label: </b>EsVariableDe</p>
+
+
+
+
+
+		<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+		<p><b class="section-title">Domain:</b> <a href="javascript:showpanel('11');" class="class">biorrefineria:Variable</a>  </p>
+
+
+
+		<p><b class="section-title">Range:</b> <a href="javascript:showpanel('6');" class="class">biorrefineria:Proceso</a>  </p>
+
+
+	<hr>
+	<b class="section-title">Implementación:</b>
+	<pre class="turtlesource">@prefix : &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorefineria#&gt; .
+@prefix biorrefineria: &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix obda: &lt;https://w3id.org/obda/vocabulary#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix swrl: &lt;http://www.w3.org/2003/11/swrl#&gt; .
+@prefix swrl2: &lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt; .
+@prefix swrlb: &lt;http://www.w3.org/2003/11/swrlb#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+biorrefineria:esVariableDe a owl:ObjectProperty ;
+    rdfs:domain biorrefineria:Variable ;
+    rdfs:range biorrefineria:Proceso ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    owl:inverseOf biorrefineria:tieneVariable .
+
+</pre>
+
+
+</div>
+
+
+
+<div class="hidden" id="43">
+
+	<h2 class="entity-section">Property: <a  href="http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#estimaVariable" class="prop"  target="_blank"
+                                          title="Try to open original URI">biorrefineria:estimaVariable</a>
+	</h2>
+	<hr>
+
+
+	<p><b class="section-title">Label: </b>EstimaVariable</p>
+
+
+
+
+
+		<hr>
+
+
+
+
+		<p><b  class="section-title">Has Super Property (direct):</b> <a href="javascript:showpanel('47');" class="prop">biorrefineria:censaVariable</a>  </p>
+
+
+
+
+
+
+
+
+
+		<p><b class="section-title">Domain:</b> <a href="javascript:showpanel('10');" class="class">biorrefineria:SensorDeSoftware</a> | <a href="javascript:showpanel('88');" class="class">N228797381c854ec393577b39a3d5ab5e</a>  </p>
+
+
+
+
+	<hr>
+	<b class="section-title">Implementación:</b>
+	<pre class="turtlesource">@prefix : &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorefineria#&gt; .
+@prefix biorrefineria: &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix obda: &lt;https://w3id.org/obda/vocabulary#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix swrl: &lt;http://www.w3.org/2003/11/swrl#&gt; .
+@prefix swrl2: &lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt; .
+@prefix swrlb: &lt;http://www.w3.org/2003/11/swrlb#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+biorrefineria:estimaVariable a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:domain biorrefineria:SensorDeSoftware ;
+    rdfs:range [ a owl:Class ;
+            owl:unionOf ( biorrefineria:VariableDeEntradaDesconocida biorrefineria:VariableDeEstadoNoMedible ) ] ;
+    rdfs:subPropertyOf biorrefineria:censaVariable .
+
+</pre>
+
+
+</div>
+
+
+
+<div class="hidden" id="44">
+
+	<h2 class="entity-section">Property: <a  href="http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#mideVariable" class="prop"  target="_blank"
+                                          title="Try to open original URI">biorrefineria:mideVariable</a>
+	</h2>
+	<hr>
+
+
+	<p><b class="section-title">Label: </b>MideVariable</p>
+
+
+
+
+
+		<hr>
+
+
+
+
+		<p><b  class="section-title">Has Super Property (direct):</b> <a href="javascript:showpanel('47');" class="prop">biorrefineria:censaVariable</a>  </p>
+
+
+
+
+
+
+
+
+
+		<p><b class="section-title">Domain:</b> <a href="javascript:showpanel('9');" class="class">biorrefineria:SensorDeHardware</a> | <a href="javascript:showpanel('89');" class="class">N9b18732ecafd4c22bb0cc29ab9f125c2</a>  </p>
+
+
+
+
+	<hr>
+	<b class="section-title">Implementación:</b>
+	<pre class="turtlesource">@prefix : &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorefineria#&gt; .
+@prefix biorrefineria: &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix obda: &lt;https://w3id.org/obda/vocabulary#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix swrl: &lt;http://www.w3.org/2003/11/swrl#&gt; .
+@prefix swrl2: &lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt; .
+@prefix swrlb: &lt;http://www.w3.org/2003/11/swrlb#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+biorrefineria:mideVariable a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:domain biorrefineria:SensorDeHardware ;
+    rdfs:range [ a owl:Class ;
+            owl:unionOf ( biorrefineria:VariableDeEntradaDesconocida biorrefineria:VariableDeEstadoMedible ) ] ;
+    rdfs:subPropertyOf biorrefineria:censaVariable .
+
+</pre>
+
+
+</div>
+
+
+
+<div class="hidden" id="23">
+
+	<h2 class="entity-section">Property: <a  href="http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#tieneDescripcionDeError" class="prop"  target="_blank"
+                                          title="Try to open original URI">biorrefineria:tieneDescripcionDeError</a>
+	</h2>
+	<hr>
+
+
+	<p><b class="section-title">Label: </b>TieneDescripcionDeError</p>
+
+
+
+
+
+		<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+		<p><b class="section-title">Domain:</b> <a href="javascript:showpanel('3');" class="class">biorrefineria:Error</a>  </p>
+
+
+
+		<p><b class="section-title">Range:</b> <a href="javascript:showpanel('64');" class="class">xsd:string</a>  </p>
+
+
+	<hr>
+	<b class="section-title">Implementación:</b>
+	<pre class="turtlesource">@prefix : &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorefineria#&gt; .
+@prefix biorrefineria: &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix obda: &lt;https://w3id.org/obda/vocabulary#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix swrl: &lt;http://www.w3.org/2003/11/swrl#&gt; .
+@prefix swrl2: &lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt; .
+@prefix swrlb: &lt;http://www.w3.org/2003/11/swrlb#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+biorrefineria:tieneDescripcionDeError a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain biorrefineria:Error ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf owl:topDataProperty .
+
+</pre>
+
+
+</div>
+
+
+
+<div class="hidden" id="24">
+
+	<h2 class="entity-section">Property: <a  href="http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#tieneDescripcionDeRecomendacion" class="prop"  target="_blank"
+                                          title="Try to open original URI">biorrefineria:tieneDescripcionDeRecomendacion</a>
+	</h2>
+	<hr>
+
+
+	<p><b class="section-title">Label: </b>TieneDescripcionDeRecomendacion</p>
+
+
+
+
+
+		<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+		<p><b class="section-title">Domain:</b> <a href="javascript:showpanel('7');" class="class">biorrefineria:Recomendacion</a>  </p>
+
+
+
+		<p><b class="section-title">Range:</b> <a href="javascript:showpanel('65');" class="class">xsd:string</a>  </p>
+
+
+	<hr>
+	<b class="section-title">Implementación:</b>
+	<pre class="turtlesource">@prefix : &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorefineria#&gt; .
+@prefix biorrefineria: &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix obda: &lt;https://w3id.org/obda/vocabulary#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix swrl: &lt;http://www.w3.org/2003/11/swrl#&gt; .
+@prefix swrl2: &lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt; .
+@prefix swrlb: &lt;http://www.w3.org/2003/11/swrlb#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+biorrefineria:tieneDescripcionDeRecomendacion a owl:DatatypeProperty ;
+    rdfs:domain biorrefineria:Recomendacion ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf owl:topDataProperty .
+
+</pre>
+
+
+</div>
+
+
+
+<div class="hidden" id="56">
+
+	<h2 class="entity-section">Property: <a  href="http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#tieneError" class="prop"  target="_blank"
+                                          title="Try to open original URI">biorrefineria:tieneError</a>
+	</h2>
+	<hr>
+
+
+	<p><b class="section-title">Label: </b>TieneError</p>
+
+
+
+
+
+		<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+		<p><b class="section-title">Domain:</b> <a href="javascript:showpanel('6');" class="class">biorrefineria:Proceso</a>  </p>
+
+
+
+		<p><b class="section-title">Range:</b> <a href="javascript:showpanel('3');" class="class">biorrefineria:Error</a>  </p>
+
+
+	<hr>
+	<b class="section-title">Implementación:</b>
+	<pre class="turtlesource">@prefix : &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorefineria#&gt; .
+@prefix biorrefineria: &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix obda: &lt;https://w3id.org/obda/vocabulary#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix swrl: &lt;http://www.w3.org/2003/11/swrl#&gt; .
+@prefix swrl2: &lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt; .
+@prefix swrlb: &lt;http://www.w3.org/2003/11/swrlb#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+biorrefineria:tieneError a owl:ObjectProperty ;
+    rdfs:domain biorrefineria:Proceso ;
+    rdfs:range biorrefineria:Error .
+
+</pre>
+
+
+</div>
+
+
+
+<div class="hidden" id="25">
+
+	<h2 class="entity-section">Property: <a  href="http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#tieneEstadoDeLectura" class="prop"  target="_blank"
+                                          title="Try to open original URI">biorrefineria:tieneEstadoDeLectura</a>
+	</h2>
+	<hr>
+
+
+	<p><b class="section-title">Label: </b>TieneEstadoDeLectura</p>
+
+
+
+
+
+		<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+		<p><b class="section-title">Domain:</b> <a href="javascript:showpanel('5');" class="class">biorrefineria:Lectura</a>  </p>
+
+
+
+		<p><b class="section-title">Range:</b> <a href="javascript:showpanel('66');" class="class">xsd:string</a>  </p>
+
+
+	<hr>
+	<b class="section-title">Implementación:</b>
+	<pre class="turtlesource">@prefix : &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorefineria#&gt; .
+@prefix biorrefineria: &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix obda: &lt;https://w3id.org/obda/vocabulary#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix swrl: &lt;http://www.w3.org/2003/11/swrl#&gt; .
+@prefix swrl2: &lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt; .
+@prefix swrlb: &lt;http://www.w3.org/2003/11/swrlb#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+biorrefineria:tieneEstadoDeLectura a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain biorrefineria:Lectura ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf owl:topDataProperty .
+
+</pre>
+
+
+</div>
+
+
+
+<div class="hidden" id="57">
+
+	<h2 class="entity-section">Property: <a  href="http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#tieneEstadoDeProceso" class="prop"  target="_blank"
+                                          title="Try to open original URI">biorrefineria:tieneEstadoDeProceso</a>
+	</h2>
+	<hr>
+
+
+	<p><b class="section-title">Label: </b>TieneEstadoDeProceso</p>
+
+
+
+
+
+		<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+		<p><b class="section-title">Domain:</b> <a href="javascript:showpanel('6');" class="class">biorrefineria:Proceso</a>  </p>
+
+
+
+		<p><b class="section-title">Range:</b> <a href="javascript:showpanel('4');" class="class">biorrefineria:Estado</a>  </p>
+
+
+	<hr>
+	<b class="section-title">Implementación:</b>
+	<pre class="turtlesource">@prefix : &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorefineria#&gt; .
+@prefix biorrefineria: &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix obda: &lt;https://w3id.org/obda/vocabulary#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix swrl: &lt;http://www.w3.org/2003/11/swrl#&gt; .
+@prefix swrl2: &lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt; .
+@prefix swrlb: &lt;http://www.w3.org/2003/11/swrlb#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+biorrefineria:tieneEstadoDeProceso a owl:ObjectProperty ;
+    rdfs:domain biorrefineria:Proceso ;
+    rdfs:range biorrefineria:Estado .
+
+</pre>
+
+
+</div>
+
+
+
+<div class="hidden" id="26">
+
+	<h2 class="entity-section">Property: <a  href="http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#tieneEstampaTiempo" class="prop"  target="_blank"
+                                          title="Try to open original URI">biorrefineria:tieneEstampaTiempo</a>
+	</h2>
+	<hr>
+
+
+	<p><b class="section-title">Label: </b>TieneEstampaTiempo</p>
+
+
+
+
+
+		<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+		<p><b class="section-title">Domain:</b> <a href="javascript:showpanel('67');" class="class">N1ae953e067d949ae981913f124b4311a</a>  </p>
+
+
+
+		<p><b class="section-title">Range:</b> <a href="javascript:showpanel('68');" class="class">xsd:string</a>  </p>
+
+
+	<hr>
+	<b class="section-title">Implementación:</b>
+	<pre class="turtlesource">@prefix : &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorefineria#&gt; .
+@prefix biorrefineria: &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix obda: &lt;https://w3id.org/obda/vocabulary#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix swrl: &lt;http://www.w3.org/2003/11/swrl#&gt; .
+@prefix swrl2: &lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt; .
+@prefix swrlb: &lt;http://www.w3.org/2003/11/swrlb#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+biorrefineria:tieneEstampaTiempo a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( biorrefineria:Error biorrefineria:Lectura ) ] ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf owl:topDataProperty .
+
+</pre>
+
+
+</div>
+
+
+
+<div class="hidden" id="27">
+
+	<h2 class="entity-section">Property: <a  href="http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#tieneFechaDeActualizacion" class="prop"  target="_blank"
+                                          title="Try to open original URI">biorrefineria:tieneFechaDeActualizacion</a>
+	</h2>
+	<hr>
+
+
+	<p><b class="section-title">Label: </b>TieneFechaDeActualizacion</p>
+
+
+
+
+
+		<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+		<p><b class="section-title">Domain:</b> <a href="javascript:showpanel('69');" class="class">N0880a2147d7c445c862d682397c5295a</a>  </p>
+
+
+
+		<p><b class="section-title">Range:</b> <a href="javascript:showpanel('70');" class="class">xsd:string</a>  </p>
+
+
+	<hr>
+	<b class="section-title">Implementación:</b>
+	<pre class="turtlesource">@prefix : &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorefineria#&gt; .
+@prefix biorrefineria: &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix obda: &lt;https://w3id.org/obda/vocabulary#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix swrl: &lt;http://www.w3.org/2003/11/swrl#&gt; .
+@prefix swrl2: &lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt; .
+@prefix swrlb: &lt;http://www.w3.org/2003/11/swrlb#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+biorrefineria:tieneFechaDeActualizacion a owl:DatatypeProperty ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( biorrefineria:Error biorrefineria:Recomendacion ) ] ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf owl:topDataProperty .
+
+</pre>
+
+
+</div>
+
+
+
+<div class="hidden" id="28">
+
+	<h2 class="entity-section">Property: <a  href="http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#tieneFlujoDeDato" class="prop"  target="_blank"
+                                          title="Try to open original URI">biorrefineria:tieneFlujoDeDato</a>
+	</h2>
+	<hr>
+
+
+	<p><b class="section-title">Label: </b>TieneFlujoDeDato</p>
+
+
+
+
+
+		<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+		<p><b class="section-title">Domain:</b> <a href="javascript:showpanel('8');" class="class">biorrefineria:Sensor</a>  </p>
+
+
+
+		<p><b class="section-title">Range:</b> <a href="javascript:showpanel('71');" class="class">xsd:string</a>  </p>
+
+
+	<hr>
+	<b class="section-title">Implementación:</b>
+	<pre class="turtlesource">@prefix : &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorefineria#&gt; .
+@prefix biorrefineria: &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix obda: &lt;https://w3id.org/obda/vocabulary#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix swrl: &lt;http://www.w3.org/2003/11/swrl#&gt; .
+@prefix swrl2: &lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt; .
+@prefix swrlb: &lt;http://www.w3.org/2003/11/swrlb#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+biorrefineria:tieneFlujoDeDato a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain biorrefineria:Sensor ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf owl:topDataProperty .
+
+</pre>
+
+
+</div>
+
+
+
+<div class="hidden" id="58">
+
+	<h2 class="entity-section">Property: <a  href="http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#tieneLectura" class="prop"  target="_blank"
+                                          title="Try to open original URI">biorrefineria:tieneLectura</a>
+	</h2>
+	<hr>
+
+
+	<p><b class="section-title">Label: </b>TieneLectura</p>
+
+
+
+
+
+		<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+		<p><b class="section-title">Domain:</b> <a href="javascript:showpanel('8');" class="class">biorrefineria:Sensor</a>  </p>
+
+
+
+		<p><b class="section-title">Range:</b> <a href="javascript:showpanel('5');" class="class">biorrefineria:Lectura</a>  </p>
+
+
+	<hr>
+	<b class="section-title">Implementación:</b>
+	<pre class="turtlesource">@prefix : &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorefineria#&gt; .
+@prefix biorrefineria: &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix obda: &lt;https://w3id.org/obda/vocabulary#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix swrl: &lt;http://www.w3.org/2003/11/swrl#&gt; .
+@prefix swrl2: &lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt; .
+@prefix swrlb: &lt;http://www.w3.org/2003/11/swrlb#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+biorrefineria:tieneLectura a owl:ObjectProperty ;
+    rdfs:domain biorrefineria:Sensor ;
+    rdfs:range biorrefineria:Lectura ;
+    rdfs:subPropertyOf owl:topObjectProperty .
+
+</pre>
+
+
+</div>
+
+
+
+<div class="hidden" id="59">
+
+	<h2 class="entity-section">Property: <a  href="http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#tieneLecturaAnomala" class="prop"  target="_blank"
+                                          title="Try to open original URI">biorrefineria:tieneLecturaAnomala</a>
+	</h2>
+	<hr>
+
+
+	<p><b class="section-title">Label: </b>TieneLecturaAnomala</p>
+
+
+
+
+
+		<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+		<p><b class="section-title">Domain:</b> <a href="javascript:showpanel('3');" class="class">biorrefineria:Error</a>  </p>
+
+
+
+		<p><b class="section-title">Range:</b> <a href="javascript:showpanel('5');" class="class">biorrefineria:Lectura</a>  </p>
+
+
+	<hr>
+	<b class="section-title">Implementación:</b>
+	<pre class="turtlesource">@prefix : &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorefineria#&gt; .
+@prefix biorrefineria: &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix obda: &lt;https://w3id.org/obda/vocabulary#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix swrl: &lt;http://www.w3.org/2003/11/swrl#&gt; .
+@prefix swrl2: &lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt; .
+@prefix swrlb: &lt;http://www.w3.org/2003/11/swrlb#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+biorrefineria:tieneLecturaAnomala a owl:ObjectProperty ;
+    rdfs:domain biorrefineria:Error ;
+    rdfs:range biorrefineria:Lectura .
+
+</pre>
+
+
+</div>
+
+
+
+<div class="hidden" id="29">
+
+	<h2 class="entity-section">Property: <a  href="http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#tieneNivelDePeligro" class="prop"  target="_blank"
+                                          title="Try to open original URI">biorrefineria:tieneNivelDePeligro</a>
+	</h2>
+	<hr>
+
+
+	<p><b class="section-title">Label: </b>TieneNivelDePeligro</p>
+
+
+
+
+
+		<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+		<p><b class="section-title">Domain:</b> <a href="javascript:showpanel('3');" class="class">biorrefineria:Error</a>  </p>
+
+
+
+		<p><b class="section-title">Range:</b> <a href="javascript:showpanel('72');" class="class">xsd:string</a>  </p>
+
+
+	<hr>
+	<b class="section-title">Implementación:</b>
+	<pre class="turtlesource">@prefix : &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorefineria#&gt; .
+@prefix biorrefineria: &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix obda: &lt;https://w3id.org/obda/vocabulary#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix swrl: &lt;http://www.w3.org/2003/11/swrl#&gt; .
+@prefix swrl2: &lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt; .
+@prefix swrlb: &lt;http://www.w3.org/2003/11/swrlb#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+biorrefineria:tieneNivelDePeligro a owl:DatatypeProperty ;
+    rdfs:domain biorrefineria:Error ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf owl:topDataProperty .
+
+</pre>
+
+
+</div>
+
+
+
+<div class="hidden" id="30">
+
+	<h2 class="entity-section">Property: <a  href="http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#tieneNombre" class="prop"  target="_blank"
+                                          title="Try to open original URI">biorrefineria:tieneNombre</a>
+	</h2>
+	<hr>
+
+
+	<p><b class="section-title">Label: </b>TieneNombre</p>
+
+
+
+
+
+		<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+		<p><b class="section-title">Domain:</b> <a href="javascript:showpanel('73');" class="class">N0e889f5204074b9a8e41f05dca80abcd</a>  </p>
+
+
+
+		<p><b class="section-title">Range:</b> <a href="javascript:showpanel('74');" class="class">xsd:string</a>  </p>
+
+
+	<hr>
+	<b class="section-title">Implementación:</b>
+	<pre class="turtlesource">@prefix : &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorefineria#&gt; .
+@prefix biorrefineria: &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix obda: &lt;https://w3id.org/obda/vocabulary#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix swrl: &lt;http://www.w3.org/2003/11/swrl#&gt; .
+@prefix swrl2: &lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt; .
+@prefix swrlb: &lt;http://www.w3.org/2003/11/swrlb#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+biorrefineria:tieneNombre a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( biorrefineria:Biorrefineria biorrefineria:Error biorrefineria:Proceso biorrefineria:Recomendacion biorrefineria:Sensor biorrefineria:Variable ) ] ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf owl:topDataProperty .
+
+</pre>
+
+
+</div>
+
+
+
+<div class="hidden" id="31">
+
+	<h2 class="entity-section">Property: <a  href="http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#tieneNumeroDeLectura" class="prop"  target="_blank"
+                                          title="Try to open original URI">biorrefineria:tieneNumeroDeLectura</a>
+	</h2>
+	<hr>
+
+
+	<p><b class="section-title">Label: </b>TieneNumeroDeLectura</p>
+
+
+
+
+
+		<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+		<p><b class="section-title">Domain:</b> <a href="javascript:showpanel('75');" class="class">owl:Thing</a> | <a href="javascript:showpanel('5');" class="class">biorrefineria:Lectura</a>  </p>
+
+
+
+		<p><b class="section-title">Range:</b> <a href="javascript:showpanel('76');" class="class">xsd:decimal</a>  </p>
+
+
+	<hr>
+	<b class="section-title">Implementación:</b>
+	<pre class="turtlesource">@prefix : &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorefineria#&gt; .
+@prefix biorrefineria: &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix obda: &lt;https://w3id.org/obda/vocabulary#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix swrl: &lt;http://www.w3.org/2003/11/swrl#&gt; .
+@prefix swrl2: &lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt; .
+@prefix swrlb: &lt;http://www.w3.org/2003/11/swrlb#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+biorrefineria:tieneNumeroDeLectura a owl:DatatypeProperty ;
+    rdfs:domain biorrefineria:Lectura,
+        owl:Thing ;
+    rdfs:range xsd:decimal .
+
+</pre>
+
+
+</div>
+
+
+
+<div class="hidden" id="60">
+
+	<h2 class="entity-section">Property: <a  href="http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#tieneProceso" class="prop"  target="_blank"
+                                          title="Try to open original URI">biorrefineria:tieneProceso</a>
+	</h2>
+	<hr>
+
+
+	<p><b class="section-title">Label: </b>TieneProceso</p>
+
+
+
+
+
+		<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+		<p><b class="section-title">Domain:</b> <a href="javascript:showpanel('2');" class="class">biorrefineria:Biorrefineria</a>  </p>
+
+
+
+		<p><b class="section-title">Range:</b> <a href="javascript:showpanel('6');" class="class">biorrefineria:Proceso</a>  </p>
+
+
+	<hr>
+	<b class="section-title">Implementación:</b>
+	<pre class="turtlesource">@prefix : &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorefineria#&gt; .
+@prefix biorrefineria: &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix obda: &lt;https://w3id.org/obda/vocabulary#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix swrl: &lt;http://www.w3.org/2003/11/swrl#&gt; .
+@prefix swrl2: &lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt; .
+@prefix swrlb: &lt;http://www.w3.org/2003/11/swrlb#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+biorrefineria:tieneProceso a owl:ObjectProperty ;
+    rdfs:domain biorrefineria:Biorrefineria ;
+    rdfs:range biorrefineria:Proceso ;
+    rdfs:subPropertyOf owl:topObjectProperty .
+
+</pre>
+
+
+</div>
+
+
+
+<div class="hidden" id="61">
+
+	<h2 class="entity-section">Property: <a  href="http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#tieneRecomendacion" class="prop"  target="_blank"
+                                          title="Try to open original URI">biorrefineria:tieneRecomendacion</a>
+	</h2>
+	<hr>
+
+
+	<p><b class="section-title">Label: </b>TieneRecomendacion</p>
+
+
+
+
+
+		<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+		<p><b class="section-title">Domain:</b> <a href="javascript:showpanel('3');" class="class">biorrefineria:Error</a>  </p>
+
+
+
+		<p><b class="section-title">Range:</b> <a href="javascript:showpanel('7');" class="class">biorrefineria:Recomendacion</a>  </p>
+
+
+	<hr>
+	<b class="section-title">Implementación:</b>
+	<pre class="turtlesource">@prefix : &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorefineria#&gt; .
+@prefix biorrefineria: &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix obda: &lt;https://w3id.org/obda/vocabulary#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix swrl: &lt;http://www.w3.org/2003/11/swrl#&gt; .
+@prefix swrl2: &lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt; .
+@prefix swrlb: &lt;http://www.w3.org/2003/11/swrlb#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+biorrefineria:tieneRecomendacion a owl:ObjectProperty ;
+    rdfs:domain biorrefineria:Error ;
+    rdfs:range biorrefineria:Recomendacion ;
+    rdfs:subPropertyOf owl:topObjectProperty .
+
+</pre>
+
+
+</div>
+
+
+
+<div class="hidden" id="32">
+
+	<h2 class="entity-section">Property: <a  href="http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#tieneTipoDeLectura" class="prop"  target="_blank"
+                                          title="Try to open original URI">biorrefineria:tieneTipoDeLectura</a>
+	</h2>
+	<hr>
+
+
+	<p><b class="section-title">Label: </b>TieneTipoDeLectura</p>
+
+
+
+
+
+		<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+		<p><b class="section-title">Domain:</b> <a href="javascript:showpanel('5');" class="class">biorrefineria:Lectura</a>  </p>
+
+
+
+		<p><b class="section-title">Range:</b> <a href="javascript:showpanel('77');" class="class">xsd:string</a>  </p>
+
+
+	<hr>
+	<b class="section-title">Implementación:</b>
+	<pre class="turtlesource">@prefix : &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorefineria#&gt; .
+@prefix biorrefineria: &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix obda: &lt;https://w3id.org/obda/vocabulary#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix swrl: &lt;http://www.w3.org/2003/11/swrl#&gt; .
+@prefix swrl2: &lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt; .
+@prefix swrlb: &lt;http://www.w3.org/2003/11/swrlb#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+biorrefineria:tieneTipoDeLectura a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain biorrefineria:Lectura ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf owl:topDataProperty .
+
+</pre>
+
+
+</div>
+
+
+
+<div class="hidden" id="33">
+
+	<h2 class="entity-section">Property: <a  href="http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#tieneUnidadDeMedida" class="prop"  target="_blank"
+                                          title="Try to open original URI">biorrefineria:tieneUnidadDeMedida</a>
+	</h2>
+	<hr>
+
+
+	<p><b class="section-title">Label: </b>TieneUnidadDeMedida</p>
+
+
+
+
+
+		<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+		<p><b class="section-title">Domain:</b> <a href="javascript:showpanel('11');" class="class">biorrefineria:Variable</a>  </p>
+
+
+
+		<p><b class="section-title">Range:</b> <a href="javascript:showpanel('78');" class="class">xsd:string</a>  </p>
+
+
+	<hr>
+	<b class="section-title">Implementación:</b>
+	<pre class="turtlesource">@prefix : &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorefineria#&gt; .
+@prefix biorrefineria: &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix obda: &lt;https://w3id.org/obda/vocabulary#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix swrl: &lt;http://www.w3.org/2003/11/swrl#&gt; .
+@prefix swrl2: &lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt; .
+@prefix swrlb: &lt;http://www.w3.org/2003/11/swrlb#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+biorrefineria:tieneUnidadDeMedida a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain biorrefineria:Variable ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf owl:topDataProperty .
+
+</pre>
+
+
+</div>
+
+
+
+<div class="hidden" id="34">
+
+	<h2 class="entity-section">Property: <a  href="http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#tieneValor" class="prop"  target="_blank"
+                                          title="Try to open original URI">biorrefineria:tieneValor</a>
+	</h2>
+	<hr>
+
+
+	<p><b class="section-title">Label: </b>TieneValor</p>
+
+
+
+
+
+		<hr>
+
+
+
+
+
+
+
+
+		<p><b class="section-title">Has Sub Property (direct):</b> <a href="javascript:showpanel('35');" class="prop">biorrefineria:tieneValorCensado</a> | <a href="javascript:showpanel('36');" class="prop">biorrefineria:tieneValorMaximo</a> | <a href="javascript:showpanel('37');" class="prop">biorrefineria:tieneValorMinimo</a> | <a href="javascript:showpanel('38');" class="prop">biorrefineria:tieneValorNominal</a> | <a href="javascript:showpanel('39');" class="prop">biorrefineria:tieneValorPropuesto</a>  </p>
+
+
+
+
+
+
+
+
+	<hr>
+	<b class="section-title">Implementación:</b>
+	<pre class="turtlesource">@prefix : &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorefineria#&gt; .
+@prefix biorrefineria: &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix obda: &lt;https://w3id.org/obda/vocabulary#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix swrl: &lt;http://www.w3.org/2003/11/swrl#&gt; .
+@prefix swrl2: &lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt; .
+@prefix swrlb: &lt;http://www.w3.org/2003/11/swrlb#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+biorrefineria:tieneValor a owl:DatatypeProperty ;
+    rdfs:subPropertyOf owl:topDataProperty .
+
+</pre>
+
+
+</div>
+
+
+
+<div class="hidden" id="35">
+
+	<h2 class="entity-section">Property: <a  href="http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#tieneValorCensado" class="prop"  target="_blank"
+                                          title="Try to open original URI">biorrefineria:tieneValorCensado</a>
+	</h2>
+	<hr>
+
+
+	<p><b class="section-title">Label: </b>TieneValorCensado</p>
+
+
+
+
+
+		<hr>
+
+
+
+
+		<p><b  class="section-title">Has Super Property (direct):</b> <a href="javascript:showpanel('34');" class="prop">biorrefineria:tieneValor</a>  </p>
+
+
+
+
+
+
+
+
+
+		<p><b class="section-title">Domain:</b> <a href="javascript:showpanel('5');" class="class">biorrefineria:Lectura</a>  </p>
+
+
+
+		<p><b class="section-title">Range:</b> <a href="javascript:showpanel('79');" class="class">xsd:decimal</a>  </p>
+
+
+	<hr>
+	<b class="section-title">Implementación:</b>
+	<pre class="turtlesource">@prefix : &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorefineria#&gt; .
+@prefix biorrefineria: &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix obda: &lt;https://w3id.org/obda/vocabulary#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix swrl: &lt;http://www.w3.org/2003/11/swrl#&gt; .
+@prefix swrl2: &lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt; .
+@prefix swrlb: &lt;http://www.w3.org/2003/11/swrlb#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+biorrefineria:tieneValorCensado a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain biorrefineria:Lectura ;
+    rdfs:range xsd:decimal ;
+    rdfs:subPropertyOf biorrefineria:tieneValor .
+
+</pre>
+
+
+</div>
+
+
+
+<div class="hidden" id="36">
+
+	<h2 class="entity-section">Property: <a  href="http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#tieneValorMaximo" class="prop"  target="_blank"
+                                          title="Try to open original URI">biorrefineria:tieneValorMaximo</a>
+	</h2>
+	<hr>
+
+
+	<p><b class="section-title">Label: </b>TieneValorMaximo</p>
+
+
+
+
+
+		<hr>
+
+
+
+
+		<p><b  class="section-title">Has Super Property (direct):</b> <a href="javascript:showpanel('34');" class="prop">biorrefineria:tieneValor</a>  </p>
+
+
+
+
+
+
+
+
+
+		<p><b class="section-title">Domain:</b> <a href="javascript:showpanel('80');" class="class">N4d4c3a5fc6034a75aa2c4d784095909d</a>  </p>
+
+
+
+		<p><b class="section-title">Range:</b> <a href="javascript:showpanel('81');" class="class">xsd:decimal</a>  </p>
+
+
+	<hr>
+	<b class="section-title">Implementación:</b>
+	<pre class="turtlesource">@prefix : &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorefineria#&gt; .
+@prefix biorrefineria: &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix obda: &lt;https://w3id.org/obda/vocabulary#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix swrl: &lt;http://www.w3.org/2003/11/swrl#&gt; .
+@prefix swrl2: &lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt; .
+@prefix swrlb: &lt;http://www.w3.org/2003/11/swrlb#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+biorrefineria:tieneValorMaximo a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( biorrefineria:Sensor biorrefineria:Variable ) ] ;
+    rdfs:range xsd:decimal ;
+    rdfs:subPropertyOf biorrefineria:tieneValor .
+
+</pre>
+
+
+</div>
+
+
+
+<div class="hidden" id="37">
+
+	<h2 class="entity-section">Property: <a  href="http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#tieneValorMinimo" class="prop"  target="_blank"
+                                          title="Try to open original URI">biorrefineria:tieneValorMinimo</a>
+	</h2>
+	<hr>
+
+
+	<p><b class="section-title">Label: </b>TieneValorMinimo</p>
+
+
+
+
+
+		<hr>
+
+
+
+
+		<p><b  class="section-title">Has Super Property (direct):</b> <a href="javascript:showpanel('34');" class="prop">biorrefineria:tieneValor</a>  </p>
+
+
+
+
+
+
+
+
+
+		<p><b class="section-title">Domain:</b> <a href="javascript:showpanel('82');" class="class">Nba4c5ebab88941efa280569b5e3fc77e</a>  </p>
+
+
+
+		<p><b class="section-title">Range:</b> <a href="javascript:showpanel('83');" class="class">xsd:decimal</a>  </p>
+
+
+	<hr>
+	<b class="section-title">Implementación:</b>
+	<pre class="turtlesource">@prefix : &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorefineria#&gt; .
+@prefix biorrefineria: &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix obda: &lt;https://w3id.org/obda/vocabulary#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix swrl: &lt;http://www.w3.org/2003/11/swrl#&gt; .
+@prefix swrl2: &lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt; .
+@prefix swrlb: &lt;http://www.w3.org/2003/11/swrlb#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+biorrefineria:tieneValorMinimo a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( biorrefineria:Sensor biorrefineria:Variable ) ] ;
+    rdfs:range xsd:decimal ;
+    rdfs:subPropertyOf biorrefineria:tieneValor .
+
+</pre>
+
+
+</div>
+
+
+
+<div class="hidden" id="38">
+
+	<h2 class="entity-section">Property: <a  href="http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#tieneValorNominal" class="prop"  target="_blank"
+                                          title="Try to open original URI">biorrefineria:tieneValorNominal</a>
+	</h2>
+	<hr>
+
+
+	<p><b class="section-title">Label: </b>TieneValorNominal</p>
+
+
+
+
+
+		<hr>
+
+
+
+
+		<p><b  class="section-title">Has Super Property (direct):</b> <a href="javascript:showpanel('34');" class="prop">biorrefineria:tieneValor</a>  </p>
+
+
+
+
+
+
+
+
+
+		<p><b class="section-title">Domain:</b> <a href="javascript:showpanel('11');" class="class">biorrefineria:Variable</a>  </p>
+
+
+
+		<p><b class="section-title">Range:</b> <a href="javascript:showpanel('84');" class="class">xsd:decimal</a>  </p>
+
+
+	<hr>
+	<b class="section-title">Implementación:</b>
+	<pre class="turtlesource">@prefix : &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorefineria#&gt; .
+@prefix biorrefineria: &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix obda: &lt;https://w3id.org/obda/vocabulary#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix swrl: &lt;http://www.w3.org/2003/11/swrl#&gt; .
+@prefix swrl2: &lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt; .
+@prefix swrlb: &lt;http://www.w3.org/2003/11/swrlb#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+biorrefineria:tieneValorNominal a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain biorrefineria:Variable ;
+    rdfs:range xsd:decimal ;
+    rdfs:subPropertyOf biorrefineria:tieneValor .
+
+</pre>
+
+
+</div>
+
+
+
+<div class="hidden" id="39">
+
+	<h2 class="entity-section">Property: <a  href="http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#tieneValorPropuesto" class="prop"  target="_blank"
+                                          title="Try to open original URI">biorrefineria:tieneValorPropuesto</a>
+	</h2>
+	<hr>
+
+
+	<p><b class="section-title">Label: </b>TieneValorPropuesto</p>
+
+
+
+
+
+		<hr>
+
+
+
+
+		<p><b  class="section-title">Has Super Property (direct):</b> <a href="javascript:showpanel('34');" class="prop">biorrefineria:tieneValor</a>  </p>
+
+
+
+
+
+
+
+
+
+		<p><b class="section-title">Domain:</b> <a href="javascript:showpanel('12');" class="class">biorrefineria:VariableDeEntradaControlada</a>  </p>
+
+
+
+		<p><b class="section-title">Range:</b> <a href="javascript:showpanel('85');" class="class">xsd:decimal</a>  </p>
+
+
+	<hr>
+	<b class="section-title">Implementación:</b>
+	<pre class="turtlesource">@prefix : &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorefineria#&gt; .
+@prefix biorrefineria: &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix obda: &lt;https://w3id.org/obda/vocabulary#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix swrl: &lt;http://www.w3.org/2003/11/swrl#&gt; .
+@prefix swrl2: &lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt; .
+@prefix swrlb: &lt;http://www.w3.org/2003/11/swrlb#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+biorrefineria:tieneValorPropuesto a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain biorrefineria:VariableDeEntradaControlada ;
+    rdfs:range xsd:decimal ;
+    rdfs:subPropertyOf biorrefineria:tieneValor .
+
+</pre>
+
+
+</div>
+
+
+
+<div class="hidden" id="62">
+
+	<h2 class="entity-section">Property: <a  href="http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#tieneVariable" class="prop"  target="_blank"
+                                          title="Try to open original URI">biorrefineria:tieneVariable</a>
+	</h2>
+	<hr>
+
+
+	<p><b class="section-title">Label: </b>TieneVariable</p>
+
+
+
+
+
+		<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+		<p><b class="section-title">Domain:</b> <a href="javascript:showpanel('6');" class="class">biorrefineria:Proceso</a>  </p>
+
+
+
+		<p><b class="section-title">Range:</b> <a href="javascript:showpanel('11');" class="class">biorrefineria:Variable</a>  </p>
+
+
+	<hr>
+	<b class="section-title">Implementación:</b>
+	<pre class="turtlesource">@prefix : &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorefineria#&gt; .
+@prefix biorrefineria: &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix obda: &lt;https://w3id.org/obda/vocabulary#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix swrl: &lt;http://www.w3.org/2003/11/swrl#&gt; .
+@prefix swrl2: &lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt; .
+@prefix swrlb: &lt;http://www.w3.org/2003/11/swrlb#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+biorrefineria:tieneVariable a owl:ObjectProperty ;
+    rdfs:domain biorrefineria:Proceso ;
+    rdfs:range biorrefineria:Variable ;
+    rdfs:subPropertyOf owl:topObjectProperty .
+
+</pre>
+
+
+</div>
+
+
+
+<div class="hidden" id="63">
+
+	<h2 class="entity-section">Property: <a  href="http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#utilizaParaEstimar" class="prop"  target="_blank"
+                                          title="Try to open original URI">biorrefineria:utilizaParaEstimar</a>
+	</h2>
+	<hr>
+
+
+	<p><b class="section-title">Label: </b>UtilizaParaEstimar</p>
+
+
+
+
+
+		<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+		<p><b class="section-title">Domain:</b> <a href="javascript:showpanel('10');" class="class">biorrefineria:SensorDeSoftware</a> | <a href="javascript:showpanel('91');" class="class">N287c15c740464d7189b408c24e734d20</a>  </p>
+
+
+
+
+	<hr>
+	<b class="section-title">Implementación:</b>
+	<pre class="turtlesource">@prefix : &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorefineria#&gt; .
+@prefix biorrefineria: &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix obda: &lt;https://w3id.org/obda/vocabulary#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix swrl: &lt;http://www.w3.org/2003/11/swrl#&gt; .
+@prefix swrl2: &lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt; .
+@prefix swrlb: &lt;http://www.w3.org/2003/11/swrlb#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+biorrefineria:utilizaParaEstimar a owl:ObjectProperty ;
+    rdfs:domain biorrefineria:SensorDeSoftware ;
+    rdfs:range [ a owl:Class ;
+            owl:unionOf ( biorrefineria:Lectura biorrefineria:VariableDeEntradaControlada ) ] .
+
+</pre>
+
+
+</div>
+
+
+
+<div class="hidden" id="16">
+
+	<h2 class="entity-section">Property: <a  href="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled" class="prop"  target="_blank"
+                                          title="Try to open original URI">swrl2:isRuleEnabled</a>
+	</h2>
+	<hr>
+
+
+	<p><b class="section-title">Label: </b>IsRuleEnabled</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<hr>
+	<b class="section-title">Implementación:</b>
+	<pre class="turtlesource">@prefix : &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorefineria#&gt; .
+@prefix biorrefineria: &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix obda: &lt;https://w3id.org/obda/vocabulary#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix swrl: &lt;http://www.w3.org/2003/11/swrl#&gt; .
+@prefix swrl2: &lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt; .
+@prefix swrlb: &lt;http://www.w3.org/2003/11/swrlb#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+swrl2:isRuleEnabled a owl:AnnotationProperty .
+
+</pre>
+
+
+</div>
+
+
+
+<div class="hidden" id="17">
+
+	<h2 class="entity-section">Property: <a  href="http://www.w3.org/2003/11/swrl#argument1" class="prop"  target="_blank"
+                                          title="Try to open original URI">swrl:argument1</a>
+	</h2>
+	<hr>
+
+
+	<p><b class="section-title">Label: </b>Argument1</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<hr>
+	<b class="section-title">Implementación:</b>
+	<pre class="turtlesource">@prefix : &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorefineria#&gt; .
+@prefix biorrefineria: &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix obda: &lt;https://w3id.org/obda/vocabulary#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix swrl: &lt;http://www.w3.org/2003/11/swrl#&gt; .
+@prefix swrl2: &lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt; .
+@prefix swrlb: &lt;http://www.w3.org/2003/11/swrlb#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+swrl:argument1 a owl:AnnotationProperty .
+
+</pre>
+
+
+</div>
+
+
+
+<div class="hidden" id="18">
+
+	<h2 class="entity-section">Property: <a  href="http://www.w3.org/2003/11/swrl#argument2" class="prop"  target="_blank"
+                                          title="Try to open original URI">swrl:argument2</a>
+	</h2>
+	<hr>
+
+
+	<p><b class="section-title">Label: </b>Argument2</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<hr>
+	<b class="section-title">Implementación:</b>
+	<pre class="turtlesource">@prefix : &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorefineria#&gt; .
+@prefix biorrefineria: &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix obda: &lt;https://w3id.org/obda/vocabulary#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix swrl: &lt;http://www.w3.org/2003/11/swrl#&gt; .
+@prefix swrl2: &lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt; .
+@prefix swrlb: &lt;http://www.w3.org/2003/11/swrlb#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+swrl:argument2 a owl:AnnotationProperty .
+
+</pre>
+
+
+</div>
+
+
+
+<div class="hidden" id="19">
+
+	<h2 class="entity-section">Property: <a  href="http://www.w3.org/2003/11/swrl#arguments" class="prop"  target="_blank"
+                                          title="Try to open original URI">swrl:arguments</a>
+	</h2>
+	<hr>
+
+
+	<p><b class="section-title">Label: </b>Arguments</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<hr>
+	<b class="section-title">Implementación:</b>
+	<pre class="turtlesource">@prefix : &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorefineria#&gt; .
+@prefix biorrefineria: &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix obda: &lt;https://w3id.org/obda/vocabulary#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix swrl: &lt;http://www.w3.org/2003/11/swrl#&gt; .
+@prefix swrl2: &lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt; .
+@prefix swrlb: &lt;http://www.w3.org/2003/11/swrlb#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+swrl:arguments a owl:AnnotationProperty .
+
+</pre>
+
+
+</div>
+
+
+
+<div class="hidden" id="20">
+
+	<h2 class="entity-section">Property: <a  href="http://www.w3.org/2003/11/swrl#builtin" class="prop"  target="_blank"
+                                          title="Try to open original URI">swrl:builtin</a>
+	</h2>
+	<hr>
+
+
+	<p><b class="section-title">Label: </b>Builtin</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<hr>
+	<b class="section-title">Implementación:</b>
+	<pre class="turtlesource">@prefix : &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorefineria#&gt; .
+@prefix biorrefineria: &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix obda: &lt;https://w3id.org/obda/vocabulary#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix swrl: &lt;http://www.w3.org/2003/11/swrl#&gt; .
+@prefix swrl2: &lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt; .
+@prefix swrlb: &lt;http://www.w3.org/2003/11/swrlb#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+swrl:builtin a owl:AnnotationProperty .
+
+</pre>
+
+
+</div>
+
+
+
+<div class="hidden" id="21">
+
+	<h2 class="entity-section">Property: <a  href="http://www.w3.org/2003/11/swrl#classPredicate" class="prop"  target="_blank"
+                                          title="Try to open original URI">swrl:classPredicate</a>
+	</h2>
+	<hr>
+
+
+	<p><b class="section-title">Label: </b>ClassPredicate</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<hr>
+	<b class="section-title">Implementación:</b>
+	<pre class="turtlesource">@prefix : &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorefineria#&gt; .
+@prefix biorrefineria: &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix obda: &lt;https://w3id.org/obda/vocabulary#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix swrl: &lt;http://www.w3.org/2003/11/swrl#&gt; .
+@prefix swrl2: &lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt; .
+@prefix swrlb: &lt;http://www.w3.org/2003/11/swrlb#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+swrl:classPredicate a owl:AnnotationProperty .
+
+</pre>
+
+
+</div>
+
+
+
+<div class="hidden" id="22">
+
+	<h2 class="entity-section">Property: <a  href="http://www.w3.org/2003/11/swrl#propertyPredicate" class="prop"  target="_blank"
+                                          title="Try to open original URI">swrl:propertyPredicate</a>
+	</h2>
+	<hr>
+
+
+	<p><b class="section-title">Label: </b>PropertyPredicate</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<hr>
+	<b class="section-title">Implementación:</b>
+	<pre class="turtlesource">@prefix : &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorefineria#&gt; .
+@prefix biorrefineria: &lt;http://www.uady.mx/1052668570/ontologias/2019/8/biorrefineria#&gt; .
+@prefix dc: &lt;http://purl.org/dc/elements/1.1/&gt; .
+@prefix obda: &lt;https://w3id.org/obda/vocabulary#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix swrl: &lt;http://www.w3.org/2003/11/swrl#&gt; .
+@prefix swrl2: &lt;http://swrl.stanford.edu/ontologies/3.3/swrla.owl#&gt; .
+@prefix swrlb: &lt;http://www.w3.org/2003/11/swrlb#&gt; .
+@prefix vann: &lt;http://purl.org/vocab/vann/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+swrl:propertyPredicate a owl:AnnotationProperty .
+
+</pre>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<div id='slider' class="side-panel side-panel-left">
+		<span class="text-muted">Press <kbd>ESC</kbd> to close</span>
+		<div id="slide_contents"></div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<script type="text/javascript" src="{% static 'libs/d3-v2/d3.v2.min.js' %}"></script>
+	    <script type="text/javascript" src="{% static 'libs/d3-v2/d3.layout.tree.js' %}"></script>
+
+	    <script type="text/javascript" src="{% static 'libs/jquery/jquery-1.7.1.min.js' %}"></script>
+	    <script type="text/javascript" src="{% static 'libs/jquery/jquery.slidereveal.min.js' %}"></script>
+
+
+
+
+
+
+
+    <script type="text/javascript">
+
+		var slider = $("#slider").slideReveal({
+			  trigger: $("#trigger"),
+			  push: false,
+			  overlay: true,
+			  width: '50%',
+			  speed: 700 ,
+			});
+
+		function showpanel(argument) {
+			console.log("#"+argument);
+			if (argument != "None") {
+				$("#slide_contents").empty();
+				$("#slide_contents").html($("#"+argument).html());
+				slider.slideReveal("show");
+			}
+		}
+
+
+
+
+
+    </script>
+
+
+<script type="text/javascript">
+
+//
+// CLASSES
+//
+
+
+
+	var json1 = {"name": "owl:Thing", "children": [{"name": "Biorrefineria", "qname": "biorrefineria:Biorrefineria", "size": 1, "objid": 2, "realsize": 0}, {"name": "Error", "qname": "biorrefineria:Error", "size": 1, "objid": 3, "realsize": 0}, {"name": "Estado", "qname": "biorrefineria:Estado", "size": 1, "objid": 4, "realsize": 0}, {"name": "Lectura", "qname": "biorrefineria:Lectura", "size": 1, "objid": 5, "realsize": 0}, {"name": "Proceso", "qname": "biorrefineria:Proceso", "size": 1, "objid": 6, "realsize": 0}, {"name": "Recomendacion", "qname": "biorrefineria:Recomendacion", "size": 1, "objid": 7, "realsize": 0}, {"qname": "biorrefineria:Sensor", "realsize": 2, "name": "Sensor", "children": [{"name": "SensorDeHardware", "qname": "biorrefineria:SensorDeHardware", "size": 1, "objid": 9, "realsize": 0}, {"name": "SensorDeSoftware", "qname": "biorrefineria:SensorDeSoftware", "size": 1, "objid": 10, "realsize": 0}], "size": 7, "objid": 8}, {"qname": "biorrefineria:Variable", "realsize": 4, "name": "Variable", "children": [{"name": "VariableDeEntradaControlada", "qname": "biorrefineria:VariableDeEntradaControlada", "size": 1, "objid": 12, "realsize": 0}, {"name": "VariableDeEntradaDesconocida", "qname": "biorrefineria:VariableDeEntradaDesconocida", "size": 1, "objid": 13, "realsize": 0}, {"name": "VariableDeEstadoMedible", "qname": "biorrefineria:VariableDeEstadoMedible", "size": 1, "objid": 14, "realsize": 0}, {"name": "VariableDeEstadoNoMedible", "qname": "biorrefineria:VariableDeEstadoNoMedible", "size": 1, "objid": 15, "realsize": 0}], "size": 9, "objid": 11}], "id": "None"};
+
+
+	var variable_height1 = 800;
+
+
+	var m = [20, 120, 100, 120],
+	    w = 800 - m[1] - m[3],
+	    h = variable_height1 - m[0] - m[2],
+	    i = 0,
+	    root_classes;
+
+	var tree1 = d3.layout.tree()
+	    .size([h, w]);
+
+	var diagonal1 = d3.svg.diagonal()
+	    .projection(function(d) { return [d.y, d.x]; });
+
+	var vis1 = d3.select("#graph_classes").append("svg:svg")
+	    .attr("width", w + m[1] + m[3])
+	    .attr("height", h + m[0] + m[2])
+	  	.append("svg:g")
+	    .attr("transform", "translate(" + m[3] + "," + m[0] + ")");
+
+	// d3.json(JSON_FILE, function(json) {
+	root_classes = json1;
+	root_classes.x0 = h / 2;
+	root_classes.y0 = 0;
+
+
+
+
+
+	update(vis1, tree1, diagonal1, root_classes, json1);
+
+
+
+
+
+
+//
+// PROPERTIES
+//
+
+
+
+
+
+	var json2 = {"name": "Properties", "children": [{"name": "afectaVariable", "qname": "biorrefineria:afectaVariable", "size": 1, "objid": 45, "realsize": 0}, {"name": "alimentaProceso", "qname": "biorrefineria:alimentaProceso", "size": 1, "objid": 46, "realsize": 0}, {"qname": "biorrefineria:censaVariable", "realsize": 2, "name": "censaVariable", "children": [{"name": "estimaVariable", "qname": "biorrefineria:estimaVariable", "size": 1, "objid": 43, "realsize": 0}, {"name": "mideVariable", "qname": "biorrefineria:mideVariable", "size": 1, "objid": 44, "realsize": 0}], "size": 7, "objid": 47}, {"name": "esAlimentadoPor", "qname": "biorrefineria:esAlimentadoPor", "size": 1, "objid": 48, "realsize": 0}, {"qname": "biorrefineria:esCensadoPor", "realsize": 2, "name": "esCensadoPor", "children": [{"name": "esEstimadoPor", "qname": "biorrefineria:esEstimadoPor", "size": 1, "objid": 40, "realsize": 0}, {"name": "esMedidoPor", "qname": "biorrefineria:esMedidoPor", "size": 1, "objid": 42, "realsize": 0}], "size": 7, "objid": 49}, {"name": "esErrorDe", "qname": "biorrefineria:esErrorDe", "size": 1, "objid": 50, "realsize": 0}, {"name": "esEstadoDeProceso", "qname": "biorrefineria:esEstadoDeProceso", "size": 1, "objid": 51, "realsize": 0}, {"name": "esLecturaDe", "qname": "biorrefineria:esLecturaDe", "size": 1, "objid": 41, "realsize": 0}, {"name": "esProcesoDe", "qname": "biorrefineria:esProcesoDe", "size": 1, "objid": 52, "realsize": 0}, {"name": "esRecomendacionDe", "qname": "biorrefineria:esRecomendacionDe", "size": 1, "objid": 53, "realsize": 0}, {"name": "esUsadoParaEstimarPor", "qname": "biorrefineria:esUsadoParaEstimarPor", "size": 1, "objid": 54, "realsize": 0}, {"name": "esVariableDe", "qname": "biorrefineria:esVariableDe", "size": 1, "objid": 55, "realsize": 0}, {"name": "tieneDescripcionDeError", "qname": "biorrefineria:tieneDescripcionDeError", "size": 1, "objid": 23, "realsize": 0}, {"name": "tieneDescripcionDeRecomendacion", "qname": "biorrefineria:tieneDescripcionDeRecomendacion", "size": 1, "objid": 24, "realsize": 0}, {"name": "tieneError", "qname": "biorrefineria:tieneError", "size": 1, "objid": 56, "realsize": 0}, {"name": "tieneEstadoDeLectura", "qname": "biorrefineria:tieneEstadoDeLectura", "size": 1, "objid": 25, "realsize": 0}, {"name": "tieneEstadoDeProceso", "qname": "biorrefineria:tieneEstadoDeProceso", "size": 1, "objid": 57, "realsize": 0}, {"name": "tieneEstampaTiempo", "qname": "biorrefineria:tieneEstampaTiempo", "size": 1, "objid": 26, "realsize": 0}, {"name": "tieneFechaDeActualizacion", "qname": "biorrefineria:tieneFechaDeActualizacion", "size": 1, "objid": 27, "realsize": 0}, {"name": "tieneFlujoDeDato", "qname": "biorrefineria:tieneFlujoDeDato", "size": 1, "objid": 28, "realsize": 0}, {"name": "tieneLectura", "qname": "biorrefineria:tieneLectura", "size": 1, "objid": 58, "realsize": 0}, {"name": "tieneLecturaAnomala", "qname": "biorrefineria:tieneLecturaAnomala", "size": 1, "objid": 59, "realsize": 0}, {"name": "tieneNivelDePeligro", "qname": "biorrefineria:tieneNivelDePeligro", "size": 1, "objid": 29, "realsize": 0}, {"name": "tieneNombre", "qname": "biorrefineria:tieneNombre", "size": 1, "objid": 30, "realsize": 0}, {"name": "tieneNumeroDeLectura", "qname": "biorrefineria:tieneNumeroDeLectura", "size": 1, "objid": 31, "realsize": 0}, {"name": "tieneProceso", "qname": "biorrefineria:tieneProceso", "size": 1, "objid": 60, "realsize": 0}, {"name": "tieneRecomendacion", "qname": "biorrefineria:tieneRecomendacion", "size": 1, "objid": 61, "realsize": 0}, {"name": "tieneTipoDeLectura", "qname": "biorrefineria:tieneTipoDeLectura", "size": 1, "objid": 32, "realsize": 0}, {"name": "tieneUnidadDeMedida", "qname": "biorrefineria:tieneUnidadDeMedida", "size": 1, "objid": 33, "realsize": 0}, {"qname": "biorrefineria:tieneValor", "realsize": 5, "name": "tieneValor", "children": [{"name": "tieneValorCensado", "qname": "biorrefineria:tieneValorCensado", "size": 1, "objid": 35, "realsize": 0}, {"name": "tieneValorMaximo", "qname": "biorrefineria:tieneValorMaximo", "size": 1, "objid": 36, "realsize": 0}, {"name": "tieneValorMinimo", "qname": "biorrefineria:tieneValorMinimo", "size": 1, "objid": 37, "realsize": 0}, {"name": "tieneValorNominal", "qname": "biorrefineria:tieneValorNominal", "size": 1, "objid": 38, "realsize": 0}, {"name": "tieneValorPropuesto", "qname": "biorrefineria:tieneValorPropuesto", "size": 1, "objid": 39, "realsize": 0}], "size": 10, "objid": 34}, {"name": "tieneVariable", "qname": "biorrefineria:tieneVariable", "size": 1, "objid": 62, "realsize": 0}, {"name": "utilizaParaEstimar", "qname": "biorrefineria:utilizaParaEstimar", "size": 1, "objid": 63, "realsize": 0}, {"name": "isRuleEnabled", "qname": "swrl2:isRuleEnabled", "size": 1, "objid": 16, "realsize": 0}, {"name": "argument1", "qname": "swrl:argument1", "size": 1, "objid": 17, "realsize": 0}, {"name": "argument2", "qname": "swrl:argument2", "size": 1, "objid": 18, "realsize": 0}, {"name": "arguments", "qname": "swrl:arguments", "size": 1, "objid": 19, "realsize": 0}, {"name": "builtin", "qname": "swrl:builtin", "size": 1, "objid": 20, "realsize": 0}, {"name": "classPredicate", "qname": "swrl:classPredicate", "size": 1, "objid": 21, "realsize": 0}, {"name": "propertyPredicate", "qname": "swrl:propertyPredicate", "size": 1, "objid": 22, "realsize": 0}], "id": "None"};
+
+
+
+	var variable_height2 = 900;
+
+
+	var m = [20, 120, 100, 120],
+	    w = 800 - m[1] - m[3],
+	    h = variable_height2 - m[0] - m[2],
+	    i = 0,
+	    root_properties;
+
+	var tree2 = d3.layout.tree()
+	    .size([h, w]);
+
+	var diagonal2 = d3.svg.diagonal()
+	    .projection(function(d) { return [d.y, d.x]; });
+
+	var vis2 = d3.select("#graph_properties").append("svg:svg")
+	    .attr("width", w + m[1] + m[3])
+	    .attr("height", h + m[0] + m[2])
+	  	.append("svg:g")
+	    .attr("transform", "translate(" + m[3] + "," + m[0] + ")");
+
+	// d3.json(JSON_FILE, function(json) {
+	root_properties = json2;
+	root_properties.x0 = h / 2;
+	root_properties.y0 = 0;
+
+
+
+
+	update(vis2, tree2, diagonal2, root_properties, json2);
+
+
+
+
+
+
+
+
+
+
+
+//
+//  SHARED FUNCTIONS
+//
+
+
+// mikele: added more args [vis, tree, diagonal, root] which originally were referenced as a Global var
+function update(vis, tree, diagonal, source, root) {
+
+  var duration = d3.event && d3.event.altKey ? 5000 : 500;
+
+  // Compute the new tree layout.
+  var nodes = tree.nodes(root).reverse();
+
+  // Normalize for fixed-depth.
+  nodes.forEach(function(d) { d.y = d.depth * 180; });
+
+  // Update the nodes…
+  var node = vis.selectAll("g.node")
+      .data(nodes, function(d) { return d.id || (d.id = ++i); });
+
+  // Enter any new nodes at the parent's previous position.
+  var nodeEnter = node.enter().append("svg:g")
+      .attr("class", "node")
+      .attr("transform", function(d) { return "translate(" + source.y0 + "," + source.x0 + ")"; });
+
+
+  nodeEnter.append("svg:circle")
+      .attr("r", 1e-6)
+      .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; })
+      .on("click", function(d) { toggle(d); update(vis, tree, diagonal, d, root); }); // note ref to <root>
+
+  nodeEnter.append("svg:text")
+      .attr("x", function(d) { return d.children || d._children ? -10 : 10; })
+      .attr("dy", ".35em")
+      .attr("text-anchor", function(d) { return d.children || d._children ? "end" : "start"; })
+      .text(function(d) { return d.name; })
+      .style("fill-opacity", 1e-6)
+      .on("click", function(d) { showpanel(d.objid); })
+	  .on("mouseover", function(d){
+			d3.select(this).attr("fill", "darkorange");
+			tooltip.text(d.qname);
+			tooltip.style("visibility", "visible"); }
+		)
+      .on("mousemove", function(d){return tooltip.style("top",
+		    (d3.event.pageY-100)+"px").style("left",(d3.event.pageX+50)+"px");})
+	  .on("mouseout", function(d){
+			d3.select(this).attr("fill", ""); // default = no stroke
+			return tooltip.style("visibility", "hidden");}
+			);
+	  // .on("mouseover", function(d, i) {
+	  // 		  label_name.text(d.name);
+	  // })
+	  // .on("mouseout", function(d, i) {
+	  // 		  label_name.text("");
+	  // });
+
+
+
+   // approach 1
+  var label_name = vis.append("text")
+      .attr("x", 20)
+      .attr("y", 200)
+	  // .attr("text-anchor", "middle")
+      .attr("opacity", "1")
+	  .style("font-size", "90px")
+	  .style("fill", "lightsteelblue")
+	  .text("");
+
+   // approach 2
+  var tooltip = d3.select("body")
+	    .append("div")
+	    .style("position", "absolute")
+	    .style("border-radius", "25px")
+	    .style("z-index", "100")
+	    .style("visibility", "hidden")
+	    .style("opacity", ".85")
+	    .style("color", "lightsteelblue")
+	    .style("background", "white")
+	    .style("font-size", "40px")
+	    .text("a simple tooltip");
+
+
+  // Transition nodes to their new position.
+  var nodeUpdate = node.transition()
+      .duration(duration)
+      .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; });
+
+  nodeUpdate.select("circle")
+      .attr("r", 4.5)
+      .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
+
+  nodeUpdate.select("text")
+      .style("fill-opacity", 1);
+
+  // Transition exiting nodes to the parent's new position.
+  var nodeExit = node.exit().transition()
+      .duration(duration)
+      .attr("transform", function(d) { return "translate(" + source.y + "," + source.x + ")"; })
+      .remove();
+
+  nodeExit.select("circle")
+      .attr("r", 1e-6);
+
+  nodeExit.select("text")
+      .style("fill-opacity", 1e-6);
+
+  // Update the links…
+  var link = vis.selectAll("path.link")
+      .data(tree.links(nodes), function(d) { return d.target.id; });
+
+  // Enter any new links at the parent's previous position.
+  link.enter().insert("svg:path", "g")
+      .attr("class", "link")
+      .attr("d", function(d) {
+        var o = {x: source.x0, y: source.y0};
+        return diagonal({source: o, target: o});
+      })
+    .transition()
+      .duration(duration)
+      .attr("d", diagonal);
+
+  // Transition links to their new position.
+  link.transition()
+      .duration(duration)
+      .attr("d", diagonal);
+
+  // Transition exiting nodes to the parent's new position.
+  link.exit().transition()
+      .duration(duration)
+      .attr("d", function(d) {
+        var o = {x: source.x, y: source.y};
+        return diagonal({source: o, target: o});
+      })
+      .remove();
+
+  // Stash the old positions for transition.
+  nodes.forEach(function(d) {
+    d.x0 = d.x;
+    d.y0 = d.y;
+  });
+
+
+}  // end of Update
+
+
+
+
+function toggleAll(d) {
+	if (d.children) {
+	  d.children.forEach(toggleAll);
+	  toggle(d);
+	}
+}
+
+
+
+// Toggle children.
+function toggle(d) {
+  if (d.children) {
+    d._children = d.children;
+    d.children = null;
+  } else {
+    d.children = d._children;
+    d._children = null;
+  }
+}
+
+
+</script>
+
+
+
+
+
+{% endblock %}

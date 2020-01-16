@@ -1,0 +1,77 @@
+{% extends "sistema_monitoreo_app/basic_dash.html" %}
+{% load crispy_forms_tags %}
+
+{% block body_block %}
+<div class="container">
+    <h1>Registro nueva medición</h1>
+<form method="post">
+    {% csrf_token %}
+    <div class="form-row">
+      <div class="form-group col-md-6 mb-0">
+                      <h3>Proceso: DA</h3>
+          {{ form.da_dil1|as_crispy_field }}
+          {{ form.da_agv_in|as_crispy_field }}
+          {{ form.da_dqo_in|as_crispy_field }}
+          {{ form.da_biomasa_x|as_crispy_field }}
+          {{ form.da_dqo_out|as_crispy_field }}
+          {{ form.da_agv_out|as_crispy_field }}
+
+                  <h3> Proceso MEC</h3>
+          {{ form.mec_agv_in|as_crispy_field }}
+          {{ form.mec_dil2|as_crispy_field }}
+          {{ form.mec_eapp|as_crispy_field }}
+          {{ form.mec_ace|as_crispy_field }}
+          {{ form.mec_xa|as_crispy_field }}
+          {{ form.mec_xm|as_crispy_field }}
+          {{ form.mec_xh|as_crispy_field }}
+          {{ form.mec_mox|as_crispy_field }}
+          {{ form.mec_imec|as_crispy_field }}
+          {{ form.mec_qh2|as_crispy_field }}
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Agregar</button>
+</form>
+</div>
+<!--    <div class="form-row">-->
+<!--      <div class="form-group col-md-6 mb-0">-->
+<!--        {{ form.da_dqo_out|as_crispy_field }}-->
+<!--      </div>-->
+<!--      <div class="form-group col-md-4 mb-0">-->
+<!--        {{ form.mec_agv_in|as_crispy_field }}-->
+<!--      </div>-->
+<!--      <div class="form-group col-md-2 mb-0">-->
+<!--        {{ form.mec_eapp|as_crispy_field }}-->
+<!--      </div>-->
+<!--    </div>-->
+
+{% endblock %}
+
+
+<!--    date = models.DateTimeField(auto_now_add=True)-->
+<!--    da_dil1 = models.FloatField()-->
+<!--    da_agv_in = models.FloatField()-->
+<!--    da_dqo_in = models.FloatField()-->
+<!--    da_biomasa_x = models.FloatField()-->
+<!--    da_dqo_out = models.FloatField()-->
+<!--    da_agv_out = models.FloatField()-->
+<!--    mec_agv_in = models.FloatField()-->
+<!--    mec_dil2 = models.FloatField()-->
+<!--    mec_eapp = models.FloatField()-->
+<!--    mec_ace = models.FloatField()-->
+<!--    mec_xa = models.FloatField()-->
+<!--    mec_xm = models.FloatField()-->
+<!--    mec_xh = models.FloatField()-->
+<!--    mec_mox = models.FloatField()-->
+<!--    mec_imec = models.FloatField()-->
+<!--    mec_qh2 = models.FloatField()-->
+<!--    da_estado = models.CharField(max_length=10, blank=True)-->
+<!--    mec_estado = models.CharField(max_length=10, blank=True)-->
+<!--    fbr_estado = models.CharField(max_length=10, blank=True)-->
+
+<!--<form method="post">-->
+<!--&lt;!&ndash; request form as             &ndash;&gt;-->
+<!--    {{ form|crispy  }}-->
+<!--    {% csrf_token %}-->
+<!--    <button type="submit" class="btn btn-primary">Crear</button>-->
+
+<!--</form>-->

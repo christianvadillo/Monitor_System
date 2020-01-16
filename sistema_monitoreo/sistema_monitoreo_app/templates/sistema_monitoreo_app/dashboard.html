@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+{% extends "sistema_monitoreo_app/basic_dash.html" %}
+{% load static %}
+{% block body_block %}
+
+                <div id="chart-area" class="col-xs-8 col-md-12">
+                    <div class="col-md-4">
+                        <div id="slider-div">
+                            <label>Date: <span id="dateLabel1">2009/01/01</span> - <span id="dateLabel2">2018/10/11</span></label>
+                            <div id="date-slider"></div>
+                        </div>
+                    </div>
+                  <div id="da-charts" class="row">
+                      <div class="col-md-4" id="chart-area1"></div>
+                      <div class="col-md-4" id="chart-area2"></div>
+                      <div class="col-md-4" id="chart-area3"></div>
+                  </div>
+                  <div id="mec-charts" class="row">
+                      <div class="col-md-4" id="chart-area4"></div>
+                      <div class="col-md-4" id="chart-area5"></div>
+                      <div class="col-md-4" id="chart-area6"></div>
+                  </div>
+                <div id="timeline"></div>
+            </div><!--    end charts        -->
+                <div id="info" class="row">
+                    <div class="col-md-4 col-md-12">
+                        <div class="col-md-4">
+                            <h2> INJECTED CONTENT: {{ inject_me }} </h2>
+                            <h6>Checar hoever code (10.04 de referencia)</h6>
+                            <a class="nav-item nav-link" href="{% url 'sistema_monitoreo_app:graph' %}"> graph/ </a> </h6>
+                            <h6>Variables de entrada: </h6>
+                            <div id="showdata"></div>
+
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<!-- External JS Libraries -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+<!--    <script src="{% static 'js/bootstrap.min.js.map' %}"></script>-->
+    <script src="{% static 'js/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'js/d3.min.js' %}"></script>
+    <script src="{% static 'js/d3-tip.js' %}"></script>
+<!-- Custom JS -->
+    <script>
+        var data_src = "{% static 'data/bio_data_10years.json' %}";
+    </script>
+
+    <script src="{% static 'js/timeline.js' %}"></script>
+    <script src="{% static 'js/line_chart.js' %}"></script>
+    <script src="{% static 'js/timeline.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+
+
+{% endblock %}

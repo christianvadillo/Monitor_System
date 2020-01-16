@@ -1,0 +1,91 @@
+{% extends "sistema_monitoreo_app/basic_dash.html" %}
+{% block body_block %}
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="page-header">
+				<h3>Biorrefinería [Simulador]</h3>
+                {% now "jS F Y H:i" %}
+			</div>
+		</div>
+	</div>
+	<div class="row">
+        {% for proceso in grouped_by_proceso %}
+		<div class="col-md-4">
+			<div class="page-header">
+				<h2>{{proceso.nombre}}</h2>
+                <h4>Estado:
+                    {% if proceso.estado == "Normal" %}
+                    <span class="badge badge-success">{{ proceso.estado }}</span></h6>
+                    {% else %}
+                    <span class="badge badge-danger">{{ proceso.estado }}</span></h6>
+                    {% endif %}
+                </h4>
+			</div>
+            <table class="table-responsive-sm table-hover tabla-medicion">
+				<thead>
+					<tr>
+						<th>Variable</th>
+                        <th>Valor</th>
+					</tr>
+				</thead>
+				<tbody>
+                {% for variable, valor in proceso.items %}
+                <tr>
+                    <td>{{variable}}</td>
+                    <td>{{valor}}</td>
+                </tr>
+                {% endfor %}
+				</tbody>
+			</table>
+		</div>
+        {% endfor %}
+    </div>
+	<div class="page-header">
+		<h3>Registro</h3>
+	</div>
+    <h5><a href="{% url 'sistema_monitoreo_app:medicion-create'  %}"> Agregar nueva medición</a></h5>
+	<div class="row">
+<table class="table table-responsive-sm table-hover tabla-medicion">
+    <thead class="thead-dark">
+    <tr>
+        <th scope="col">id</th>
+        <th scope="col">Fecha</th>
+        <th scope="col">Estado DA</th>
+        <th scope="col">Estado MEC</th>
+		<th scope="col">Estado FBR</th>
+
+
+    </tr>
+    </thead>
+    <tbody>
+    {% for medicion in mediciones %}
+    <tr>
+        <td>{{medicion.id}} </td>
+        <td><a href="{% url 'sistema_monitoreo_app:medicion-detail' medicion.id %}"> {{ medicion.date }}</a></td>
+        <td>{% if medicion.da_estado == "Normal" %}
+            <span class="badge badge-success">{{ medicion.da_estado }}</span>
+            {% else %}
+            <span class="badge badge-danger">{{ medicion.da_estado }}</span>
+            {% endif %}
+        </td>
+        <td>{% if medicion.mec_estado == "Normal" %}
+            <span class="badge badge-success">{{ medicion.mec_estado }}</span>
+            {% else %}
+            <span class="badge badge-danger">{{ medicion.mec_estado }}</span>
+            {% endif %}
+        </td>
+        <td>{% if medicion.fbr_estado == "Normal" %}
+            <span class="badge badge-success">{{ medicion.fbr_estado }}</span>
+            {% else %}
+            <span class="badge badge-danger">{{ medicion.fbr_estado }}</span>
+            {% endif %}
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+	</div>
+</div>
+{% endblock %}

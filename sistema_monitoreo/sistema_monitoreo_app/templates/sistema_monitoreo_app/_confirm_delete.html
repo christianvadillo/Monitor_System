@@ -1,0 +1,20 @@
+{% extends "sistema_monitoreo_app/basic_dash.html" %}
+{% load crispy_forms_tags %}
+
+{% block body_block %}
+<H1> Está en proceso de eliminación de {{object_detail.nombre}} </H1>
+<form method="post">
+<!-- request form as             -->
+    {% csrf_token %}
+    <p> ¿Está seguro de que desea eliminar "{{ object }}"?</p>
+    <input type="submit" value="Confirmar">
+    {% if object_detail.get_cname == "Regla" %}
+    <a class="btn btn-primary" href="{% url 'sistema_monitoreo_app:regla-detail' object_detail.id%}" role="button">Cancelar</a>
+    {% else %}
+    <a class="btn btn-primary" href="{% url 'sistema_monitoreo_app:error-detail' object_detail.id%}" role="button">Cancelar</a>
+    {% endif %}
+<!--    <button type="submit" class="btn btn-primary">Crear</button>-->
+
+</form>
+
+{% endblock %}
